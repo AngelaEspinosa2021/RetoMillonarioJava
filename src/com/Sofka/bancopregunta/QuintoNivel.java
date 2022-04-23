@@ -20,11 +20,11 @@ public class QuintoNivel extends BancoPregunta{
                 "A. 1850", "B. 1896", "C. 1829",
                 "D. 1930", "B", 300);
 
-        BancoPregunta segundoPregunta = new QuintoNivel("¿En qué año cayo el Imperio Romano de Occidente?",
+        BancoPregunta segundaPregunta = new QuintoNivel("¿En qué año cayo el Imperio Romano de Occidente?",
                 "A. 572", "B. 476", "C. 387",
                 "D. 457", "B", 300);
 
-        BancoPregunta tercerPreguta = new QuintoNivel("¿Quien hizo la voz de Mufasa en el rey leon?",
+        BancoPregunta terceraPregunta = new QuintoNivel("¿Quien hizo la voz de Mufasa en el rey leon?",
                 "A. James Earl Jones", "B. Jorge Gonzalez",
                 "C. Eduardo Perez", "D. David Fernandez", "A", 300);
 
@@ -37,6 +37,8 @@ public class QuintoNivel extends BancoPregunta{
         BancoPregunta quintaPregunta = new QuintoNivel("¿Cuál es la única ciudad que está en dos continentes distintos?",
                 "A. Moscu", "B. Estambul", "C. Novosibirsk",
                 "D. Perm", "B", 300);
-        return "";
+
+        BancoPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return this.imprimirPregunta(pregunta);
     }
 }
