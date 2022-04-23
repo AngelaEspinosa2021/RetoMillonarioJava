@@ -30,12 +30,11 @@ public class TercerNivel extends BancoPregunta {
                 "C. Harry Potter y el Prisionero de Azkaban", "D. Harry Potter y la Piedra Filosofal",
                 "B", 200);
 
-        BancoPregunta cuartaPregunta = new TercerNivel("¿Que es un viviparo?", "A. Alguien que es mas vivo que los demas",
-                "B. Un animal que nace del utero de su madre", "C. Un animal que nace vivo",
-                "D. Un animal que nace y se muere", "B", 200);
+        BancoPregunta cuartaPregunta = new TercerNivel("¿Cual es el hueso mas grande del cuerpo humano?", "A. Femur",
+                "B. Perone", "C. Esternocleidomastoideo", "D. Torax", "A", 150);
 
-        BancoPregunta quintaPregunta = new TercerNivel("¿Cuál es el país más grande del mundo?", "A. China",
-                "B. Estados Unidos", "C. Rusia", "D. Canada", "C", 200);
+        BancoPregunta quintaPregunta = new TercerNivel("¿Cual es el rio mas largo del mundo?", "A. Rio Nilo",
+                "B. Rio Amazonas", "C. Rio Danubio", "D. Rio Ganges", "B", 150);
 
         return "";
     }
