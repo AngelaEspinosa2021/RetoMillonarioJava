@@ -1,5 +1,7 @@
 package com.Sofka.bancopregunta;
 
+import java.util.Random;
+
 public class BancoPregunta {
     protected String pregunta;
     protected String respuestaA;
@@ -24,7 +26,15 @@ public class BancoPregunta {
     }
 
 
+    public int numeroAleatorio(){
+        Random random = new Random();
+        return  random.nextInt(5) + 1;
+    }
 
+    public void asignarPregunta(){
+        int numero = numeroAleatorio();
+        System.out.println(numero);
+    }
 
 
     @Override
@@ -37,6 +47,11 @@ public class BancoPregunta {
                 ", respuestaD=" + respuestaD +
                 ", puntaje=" + puntaje +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        BancoPregunta bancoPregunta = new BancoPregunta();
+        bancoPregunta.asignarPregunta();
     }
 
 }
