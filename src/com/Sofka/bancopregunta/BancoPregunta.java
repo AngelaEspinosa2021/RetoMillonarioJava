@@ -1,17 +1,20 @@
 package com.Sofka.bancopregunta;
 
 public class BancoPregunta {
-    protected String pregunta;
-    protected String respuestaA;
-    protected String respuestaB;
-    protected String respuestaC;
-    protected String respuestaD;
-    protected String correcta;
-    protected double puntaje;
 
-    public BancoPregunta(){
+
+    private String pregunta;
+    private String respuestaA;
+    private String respuestaB;
+    private String respuestaC;
+    private String respuestaD;
+    private String correcta;
+    private double puntaje;
+
+    public BancoPregunta() {
 
     }
+
 
     public BancoPregunta(String pregunta, String respuestaA, String respuestaB, String respuestaC, String respuestaD, String correcta, double puntaje) {
         this.pregunta = pregunta;
@@ -22,21 +25,16 @@ public class BancoPregunta {
         this.correcta=correcta;
         this.puntaje = puntaje;
     }
-
-
-
-
+    public String getCorrecta() {
+        return correcta;
+    }
 
     @Override
     public String toString() {
-        return "BancoPregunta{" +
-                "pregunta='" + pregunta + '\'' +
-                ", respuestaA=" + respuestaA +
-                ", respuestaB=" + respuestaB +
-                ", respuestaC=" + respuestaC +
-                ", respuestaD=" + respuestaD +
-                ", puntaje=" + puntaje +
-                '}';
+        return "Juguemos por " + puntaje + " puntos" + "\n"
+                + pregunta + "\n" + respuestaA + "\n" + respuestaB +
+                "\n" + respuestaC + "\n" + respuestaD +
+                "\nEn Cualquier momento preciona R para retirarte";
     }
 
 }
