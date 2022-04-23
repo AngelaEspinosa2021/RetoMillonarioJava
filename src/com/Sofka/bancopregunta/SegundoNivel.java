@@ -1,6 +1,6 @@
 package com.Sofka.bancopregunta;
 
-public class SegundoNivel extends BancoPregunta {
+public class tercerNivel extends BancoPregunta {
 
 
     //Constructor vacio
