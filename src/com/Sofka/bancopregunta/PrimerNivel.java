@@ -2,10 +2,12 @@ package com.Sofka.bancopregunta;
 
 public class PrimerNivel extends BancoPregunta {
 
+    //Constructor vacio
     public PrimerNivel() {
 
     }
 
+    //contructor con super del padre
     public PrimerNivel(String pregunta, String respuestaA, String respuestaB, String respuestaC, String respuestaD, String correcta, double puntaje) {
         super(pregunta, respuestaA, respuestaB, respuestaC, respuestaD, correcta, puntaje);
     }
