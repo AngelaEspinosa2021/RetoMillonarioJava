@@ -20,10 +20,10 @@ public class SegundoNivel extends BancoPregunta{
         BancoPregunta primeraPregunta = new SegundoNivel("¿A que jugador de futbol le dicen el VICHO?", "A. Lionel Messi",
                 "B. Rhonaldinho", "C. Cristiano Ronaldo", "D. Kylian Mbappe", "C", 150);
 
-        BancoPregunta segundoPregunta = new SegundoNivel("¿Que famoso filosofo, fue maestro de Alejandro Magno?", "A. Socrates",
+        BancoPregunta segundaPregunta = new SegundoNivel("¿Que famoso filosofo, fue maestro de Alejandro Magno?", "A. Socrates",
                 "B. Platon", "C. Aristoteles", "D. Descartes", "C", 150);
 
-        BancoPregunta tercerPreguta = new SegundoNivel("¿Cual es el nombre del villano principal del señor de los anillos?", "A. Gandalf",
+        BancoPregunta terceraPregunta = new SegundoNivel("¿Cual es el nombre del villano principal del señor de los anillos?", "A. Gandalf",
                 "B. Saruman", "C. Frodo", "D. Sauron", "D", 150);
 
         BancoPregunta cuartaPregunta = new SegundoNivel("¿Cual es el hueso mas grande del cuerpo humano?", "A. Femur",
@@ -32,6 +32,8 @@ public class SegundoNivel extends BancoPregunta{
         BancoPregunta quintaPregunta = new SegundoNivel("¿Cual es el rio mas largo del mundo?", "A. Rio Nilo",
                 "B. Rio Amazonas", "C. Rio Danubio", "D. Rio Ganges", "B", 150);
 
-        return "";
+        BancoPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return this.imprimirPregunta(pregunta);
+
     }
 }
