@@ -1,6 +1,6 @@
 package com.Sofka.bancopregunta;
 
-public class CuartoNivel extends BancoPregunta {
+public class CuartoNivel extends ServicioPregunta {
     //Constructor vacio
     public CuartoNivel() {
 
@@ -14,26 +14,26 @@ public class CuartoNivel extends BancoPregunta {
     //Agregando preguntas al primer nivel
 
 
-    public String preguntaNivelDos() {
+    public String preguntaNivelCuatro() {
 
-        BancoPregunta primeraPregunta = new CuartoNivel("¿En que año gano Roger Federer su primer Grand Slam?",
+        ServicioPregunta primeraPregunta = new CuartoNivel("¿En que año gano Roger Federer su primer Grand Slam?",
                 "A. 2000", "B. 2005", "C. 2003", "D. 2004",
                 "C", 250);
 
-        BancoPregunta segundaPregunta = new CuartoNivel("¿Cómo comenzó la Primera Guerra Mundial?",
+        ServicioPregunta segundaPregunta = new CuartoNivel("¿Cómo comenzó la Primera Guerra Mundial?",
                 "A. Con el intento de asesinato del príncipe belga Leopold",
                 "B. Con el asesinato del archiduque Francisco Fernando",
                 "C. Con la batalla de Gallipoli",
                 "D. Con la caida del imperio Otomano", "B", 250);
 
-        BancoPregunta terceraPregunta = new CuartoNivel("¿Como se llama el actor que interpreta a Severus Snape en Harry Potter?",
+        ServicioPregunta terceraPregunta = new CuartoNivel("¿Como se llama el actor que interpreta a Severus Snape en Harry Potter?",
                 "A. Alan Rickman", "B. Gary Oldman", "C. Jason Isaacs",
                 "D. Richard Harris", "A", 250);
 
-        BancoPregunta cuartaPregunta = new CuartoNivel("¿Cuantos cromosomas tiene el ser humano?", "A.  45",
+        ServicioPregunta cuartaPregunta = new CuartoNivel("¿Cuantos cromosomas tiene el ser humano?", "A.  45",
                 "47", "C. 46", "D. 35", "A", 250);
 
-        BancoPregunta quintaPregunta = new CuartoNivel("¿En que continente esta ubicado Surinam?", "A. Asia",
+        ServicioPregunta quintaPregunta = new CuartoNivel("¿En que continente esta ubicado Surinam?", "A. Asia",
                 "B. America del sur", "C. Europa", "D. Africa", "B", 250);
 
         String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
