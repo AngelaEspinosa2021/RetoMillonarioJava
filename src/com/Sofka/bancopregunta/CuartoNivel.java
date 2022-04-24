@@ -36,7 +36,7 @@ public class CuartoNivel extends BancoPregunta {
         BancoPregunta quintaPregunta = new CuartoNivel("¿En que continente esta ubicado Surinam?", "A. Asia",
                 "B. America del sur", "C. Europa", "D. Africa", "B", 250);
 
-        BancoPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
-        return this.imprimirPregunta(pregunta);
+        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return (pregunta.toString());
     }
 }

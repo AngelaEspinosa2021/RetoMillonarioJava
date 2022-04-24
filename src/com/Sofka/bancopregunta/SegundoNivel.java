@@ -32,8 +32,8 @@ public class SegundoNivel extends BancoPregunta{
         BancoPregunta quintaPregunta = new SegundoNivel("¿Cual es el rio mas largo del mundo?", "A. Rio Nilo",
                 "B. Rio Amazonas", "C. Rio Danubio", "D. Rio Ganges", "B", 150);
 
-        BancoPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
-        return this.imprimirPregunta(pregunta);
+        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return (pregunta.toString());
 
     }
 }
