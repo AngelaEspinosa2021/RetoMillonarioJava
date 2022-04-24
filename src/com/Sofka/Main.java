@@ -63,7 +63,11 @@ public class Main {
                             opcion2=menu3.nextInt();
                         }
                     case 0:
+<<<<<<< HEAD
                         System.out.println("Salio del juego");
+=======
+                        jugadores.eliminarJugadores();
+>>>>>>> 4f8e13c64c311ad5665dc4a64c937cae90e6595a
                         break;
 
                     default:
