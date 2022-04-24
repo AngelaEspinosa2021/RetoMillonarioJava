@@ -3,69 +3,82 @@ package com.Sofka.bancopregunta;
 import java.util.Random;
 
 public class BancoPregunta {
+    public PrimerNivel tercerNivel;
+    public SegundoNivel segundoNivel;
+    public TercerNivel tercerNivel;
+    public CuartoNivel cuartoNivel;
+    public QuintoNivel quintoNivel;
+    public String respuestaCorrecta;
 
-    protected String pregunta;
-    protected String respuestaA;
-    protected String respuestaB;
-    protected String respuestaC;
-    protected String respuestaD;
-    protected String correcta;
-    protected double puntaje;
-
-    public BancoPregunta(){
-
+    public void setPrimerNivel(){
+        TercerNivel = new PrimerNivel();
+        respuestaCorrecta = TercerNivel.preguntasNivelUno();
     }
 
-    public BancoPregunta(String pregunta, String respuestaA, String respuestaB, String respuestaC, String respuestaD, String correcta, double puntaje) {
-        this.pregunta = pregunta;
-        this.respuestaA = respuestaA;
-        this.respuestaB = respuestaB;
-        this.respuestaC = respuestaC;
-        this.respuestaD = respuestaD;
-        this.correcta=correcta;
-        this.puntaje = puntaje;
+    public void setSegundoNivel(){
+        segundoNivel = new SegundoNivel();
+        respuestaCorrecta = (segundoNivel.preguntaNivelDos());
+    }
+    public void setTercerNivel(){
+        tercerNivel = new TercerNivel();
+        respuestaCorrecta = (tercerNivel.preguntaNivelTres());
+    }
+    public void setCuartoNivel(){
+        cuartoNivel = new CuartoNivel();
+        respuestaCorrecta = (cuartoNivel.preguntaNivelCuatro());
+    }
+    public void setQuintoNivel() {
+        quintoNivel = new QuintoNivel();
+        respuestaCorrecta = (quintoNivel.preguntaNivelCinco());
     }
 
+    public String evaluarRespuesta(String correcta, String usuario) {
 
-    //calcular aleatorio
-    public int numeroAleatorio(){
-        Random random = new Random();
-        return  random.nextInt(5) + 1;
-    }
+        this.respuestaCorrecta = correcta;
+        String opciones[] = {"A", "B", "C", "D", "R"};
+        String captura = "";
+        for (int i = 0; i < opciones.length; i++) {
+            if (opciones[i].equalsIgnoreCase(usuario)) {
+                captura = usuario;
+                break;
+            } else {
+                captura = "nula";
 
-    public String asignarPregunta(BancoPregunta preguntaUno,BancoPregunta preguntaDos,BancoPregunta preguntaTres,BancoPregunta preguntaCuatro,BancoPregunta preguntaCinco){
-        int numero = numeroAleatorio();
-        String preguntaAsignada;
-        switch (numero){
-            case 1:
-                preguntaAsignada =preguntaUno.toString();
-                break;
-            case 2:
-                preguntaAsignada =preguntaDos.toString();
-                break;
-            case 3:
-                preguntaAsignada =preguntaTres.toString();
-                break;
-            case 4:
-                preguntaAsignada= preguntaCuatro.toString();
-                break;
-            case 5:
-                preguntaAsignada=preguntaCinco.toString();
-                break;
-            default:
-                return  ("Unexpected value: " + numero);
+            }
         }
-        return preguntaAsignada;
+
+        if (correcta.equalsIgnoreCase(captura)) {
+            return "respuesta correcta";
+        }
+        if (captura.equalsIgnoreCase("R")) {
+            return "El usuario se retira";
+        }
+        if (captura.equalsIgnoreCase("nula")) {
+            return "Selecciona una opcion corecta";
+        } else {
+            return "Respuesta incorrecta";
+        }
     }
 
 
 
+    public static void main(String[] args) {
+        BancoPregunta bancoPregunta = new BancoPregunta();
+        bancoPregunta.setPrimerNivel();
+        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
+        System.out.println("------------");
+        bancoPregunta.setSegundoNivel();
+        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
+        System.out.println("------------");
+        bancoPregunta.setTercerNivel();
+        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
+        System.out.println("------------");
+        bancoPregunta.setCuartoNivel();
+        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
+        System.out.println("-----------");
+        bancoPregunta.setQuintoNivel();
+        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
+        System.out.println("-----------");
 
-    @Override
-    public String toString() {
-        return "Juguemos por " + puntaje + " puntos" + "\n"
-                + pregunta + "\n" + respuestaA + "\n" + respuestaB +
-                "\n" + respuestaC + "\n" + respuestaD +
-                "\nEn Cualquier momento preciona R para retirarte";
     }
 }
