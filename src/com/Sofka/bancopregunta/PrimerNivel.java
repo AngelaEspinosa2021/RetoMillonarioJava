@@ -36,6 +36,10 @@ public class PrimerNivel extends BancoPregunta {
 
     }
 
+    /*public void imprimirPregunta() {
+        System.out.println(this.informacion);
+    }*/
+
     public static void main(String[] args) {
         PrimerNivel primerNivel = new PrimerNivel();
         System.out.println(primerNivel.preguntasNivelUno());
