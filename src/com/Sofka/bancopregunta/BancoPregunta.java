@@ -77,13 +77,6 @@ public class BancoPregunta {
             return "Respuesta Incorrecta";
     }
 
-    public static void main(String[] args) {
-        BancoPregunta bancoPregunta = new BancoPregunta();
-        bancoPregunta.setPrimerNivel();
-        System.out.println(bancoPregunta.evaluarRespuesta("B"));
-        bancoPregunta.mostraInformacion();
-    }
-
  }
 
 

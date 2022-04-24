@@ -2,6 +2,7 @@ package com.Sofka.controladores;
 
 import javax.swing.*;
 import java.sql.*;
+import java.sql.PreparedStatement;
 
 public class dbController {
 
