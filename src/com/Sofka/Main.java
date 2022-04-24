@@ -13,8 +13,6 @@ public class Main {
         Juego juego = new Juego();
         Jugador jugador = new Jugador();
         Consultas jugadores = new Consultas();
-        jugadores.agregarJugador();
-        jugadores.consultarJugadores();
         int opcion = -1;
         while(opcion != 0){
             try {
@@ -31,14 +29,14 @@ public class Main {
                 switch (opcion) {
                     case 1:
                         var nombreJugador = jugador.validarNombreJugador();
-                        jugador.guardarNombreJugador(nombreJugador);
+                        jugadores.agregarJugador(nombreJugador);
                         int valor = juego.iniciarJuego(nombreJugador);
                         if(valor == 0){
                             break;
                         }
                         break;
                     case 2:
-                        jugador.mostrarListaJugadores();
+                        jugadores.consultarJugadores();
                         break;
                     case 0:
                         break;

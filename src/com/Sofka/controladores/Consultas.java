@@ -24,10 +24,11 @@ public class Consultas {
             }
         }
 
-        public void agregarJugador(){
+        public void agregarJugador(String jugador){
             try{
-                String ps = "INSERT INTO jugadores VALUES('Angela', '300')";
+                String ps = "INSERT INTO jugadores VALUES(?, '0')";
                 PreparedStatement nueva = conex.prepareStatement(ps);
+                nueva.setString(1, jugador);
                 nueva.executeUpdate();
 
             }catch (Exception e){
