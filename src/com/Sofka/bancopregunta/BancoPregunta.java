@@ -37,21 +37,9 @@ public class BancoPregunta {
 
     }
 
-    public static void main(String[] args) {
-        BancoPregunta bancoPregunta = new BancoPregunta();
-        System.out.println("Pregunta uno");
-        bancoPregunta.setPrimerNivel();
-        System.out.println("Pregunta Dos");
-        bancoPregunta.setSegundoNivel();
-        System.out.println("Pregunta tres");
-        bancoPregunta.setTercerNivel();
-        System.out.println("Pregunta cuatro");
-        bancoPregunta.setCuartoNivel();
-        System.out.println("Pregunta cinco");
-        bancoPregunta.setQuintoNivel();
 
 
-    }
+
 
 
 }
