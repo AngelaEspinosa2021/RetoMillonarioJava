@@ -1,5 +1,6 @@
 package com.Sofka;
 
+import com.Sofka.controladores.Consultas;
 import com.Sofka.entidades.Juego;
 import com.Sofka.entidades.Jugador;
 
@@ -11,6 +12,9 @@ public class Main {
     public static void main(String[] args) {
         Juego juego = new Juego();
         Jugador jugador = new Jugador();
+        Consultas jugadores = new Consultas();
+        jugadores.agregarJugador();
+        jugadores.consultarJugadores();
         int opcion = -1;
         while(opcion != 0){
             try {
