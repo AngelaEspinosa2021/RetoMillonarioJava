@@ -35,54 +35,33 @@ public class BancoPregunta {
     }
 
     public String evaluarRespuesta(String correcta, String usuario) {
-
-        this.respuestaCorrecta = correcta;
         String opciones[] = {"A", "B", "C", "D", "R"};
         String captura = "";
-        for (int i = 0; i < opciones.length; i++) {
-            if (opciones[i].equalsIgnoreCase(usuario)) {
-                captura = usuario;
-                break;
-            } else {
-                captura = "nula";
-
+        for (String elemento:opciones) {
+            if(respuestaCorrecta.equalsIgnoreCase(usuario)){
+                captura=usuario;
             }
+                captura="N";
         }
 
-        if (correcta.equalsIgnoreCase(captura)) {
-            return "respuesta correcta";
+        switch (captura.toUpperCase()){
+            case "N":
+                return "Ingrese una opcion validad";
+            case "R":
+                return "Salio del juego";
+            default:
+                return this.validarRespuesta(captura);
         }
-        if (captura.equalsIgnoreCase("R")) {
-            return "El usuario se retira";
+    }
+
+    public String validarRespuesta(String usuario){
+        if(respuestaCorrecta.equalsIgnoreCase(usuario)){
+            return "Respuesta Correcta";
         }
-        if (captura.equalsIgnoreCase("nula")) {
-            return "Selecciona una opcion corecta";
-        } else {
-            return "Respuesta incorrecta";
-        }
+            return "Respuesta ncorrecta";
+    }
+
     }
 
 
 
-    public static void main(String[] args) {
-        BancoPregunta bancoPregunta = new BancoPregunta();
-        bancoPregunta.setPrimerNivel();
-        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
-        System.out.println("------------");
-        bancoPregunta.setSegundoNivel();
-        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
-        System.out.println("------------");
-        bancoPregunta.setTercerNivel();
-        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
-        System.out.println("------------");
-        bancoPregunta.setCuartoNivel();
-        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
-        System.out.println("-----------");
-        bancoPregunta.setQuintoNivel();
-        System.out.println(bancoPregunta.evaluarRespuesta("A","B"));
-        System.out.println("-----------");
-
-    }
-
-
-}
