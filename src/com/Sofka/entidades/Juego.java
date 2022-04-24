@@ -16,7 +16,6 @@ public class Juego {
 
     public int iniciarJuego(String jugador){
         this.puntajeFinal = 0;
-        System.out.println("Logica del juego");
         System.out.println("Primera Pregunta");
         int[] nivelUno = this.primerNivel();
         asignarScoreJugador(nivelUno,jugador);
