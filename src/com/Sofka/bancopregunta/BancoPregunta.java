@@ -1,5 +1,7 @@
 package com.Sofka.bancopregunta;
 
+import static java.lang.System.exit;
+
 public class BancoPregunta {
 
     public String correcta;
@@ -55,15 +57,17 @@ public class BancoPregunta {
             }
                 captura="N";
         }
-
         switch (captura.toUpperCase()){
             case "N":
-                return "Ingrese una opcion validad";
+                System.out.println("Ingrese una opción valida");
+                break;
             case "R":
-                return "Salio del juego";
+                System.out.println("Salio del juego");
+                break;
             default:
                 return this.validarRespuesta(captura);
         }
+        return "FIN.";
     }
 
     public void mostraInformacion(){
