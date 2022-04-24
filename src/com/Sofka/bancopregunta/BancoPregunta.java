@@ -1,71 +1,45 @@
 package com.Sofka.bancopregunta;
 
-import java.util.Random;
-
 public class BancoPregunta {
-
-    protected String pregunta;
-    protected String respuestaA;
-    protected String respuestaB;
-    protected String respuestaC;
-    protected String respuestaD;
-    protected String correcta;
-    protected double puntaje;
+    public PrimerNivel TercerNivel;
+    public SegundoNivel segundoNivel;
+    public TercerNivel tercerNivel;
+    public CuartoNivel cuartoNivel;
+    public QuintoNivel quintoNivel;
 
     public BancoPregunta(){
 
     }
 
-    public BancoPregunta(String pregunta, String respuestaA, String respuestaB, String respuestaC, String respuestaD, String correcta, double puntaje) {
-        this.pregunta = pregunta;
-        this.respuestaA = respuestaA;
-        this.respuestaB = respuestaB;
-        this.respuestaC = respuestaC;
-        this.respuestaD = respuestaD;
-        this.correcta=correcta;
-        this.puntaje = puntaje;
+    public void setPrimerNivel(){
+        TercerNivel = new PrimerNivel();
+        System.out.println(TercerNivel.preguntasNivelUno());
     }
 
+    public void setSegundoNivel(){
+        segundoNivel = new SegundoNivel();
+        System.out.println(segundoNivel.preguntaNivelDos());
 
-    //calcular aleatorio
-    public int numeroAleatorio(){
-        Random random = new Random();
-        return  random.nextInt(5) + 1;
     }
+    public void setTercerNivel(){
+        tercerNivel = new TercerNivel();
+        System.out.println(tercerNivel.preguntaNivelTres());
 
-    public String asignarPregunta(BancoPregunta preguntaUno,BancoPregunta preguntaDos,BancoPregunta preguntaTres,BancoPregunta preguntaCuatro,BancoPregunta preguntaCinco){
-        int numero = numeroAleatorio();
-        String preguntaAsignada;
-        switch (numero){
-            case 1:
-                preguntaAsignada =preguntaUno.toString();
-                break;
-            case 2:
-                preguntaAsignada =preguntaDos.toString();
-                break;
-            case 3:
-                preguntaAsignada =preguntaTres.toString();
-                break;
-            case 4:
-                preguntaAsignada= preguntaCuatro.toString();
-                break;
-            case 5:
-                preguntaAsignada=preguntaCinco.toString();
-                break;
-            default:
-                return  ("Unexpected value: " + numero);
+    }
+    public void setCuartoNivel(){
+        cuartoNivel = new CuartoNivel();
+        System.out.println(cuartoNivel.preguntaNivelCuatro());
+
         }
-        return preguntaAsignada;
+    public void setQuintoNivel() {
+        quintoNivel = new QuintoNivel();
+        System.out.println(quintoNivel.preguntaNivelCinco());
+
     }
 
 
 
 
-    @Override
-    public String toString() {
-        return "Juguemos por " + puntaje + " puntos" + "\n"
-                + pregunta + "\n" + respuestaA + "\n" + respuestaB +
-                "\n" + respuestaC + "\n" + respuestaD +
-                "\nEn Cualquier momento preciona R para retirarte";
-    }
+
+
 }

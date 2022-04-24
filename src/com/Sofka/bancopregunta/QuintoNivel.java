@@ -1,6 +1,6 @@
 package com.Sofka.bancopregunta;
 
-public class QuintoNivel extends BancoPregunta{
+public class QuintoNivel extends ServicioPregunta {
     //Constructor vacio
     public QuintoNivel() {
 
@@ -14,27 +14,27 @@ public class QuintoNivel extends BancoPregunta{
     //Agregando preguntas al primer nivel
 
 
-    public String preguntaNivelDos() {
+    public String preguntaNivelCinco() {
 
-        BancoPregunta primeraPregunta = new QuintoNivel("¿Cuándo se realizaron los primeros Juegos Olímpicos?",
+        ServicioPregunta primeraPregunta = new QuintoNivel("¿Cuándo se realizaron los primeros Juegos Olímpicos?",
                 "A. 1850", "B. 1896", "C. 1829",
                 "D. 1930", "B", 300);
 
-        BancoPregunta segundaPregunta = new QuintoNivel("¿En qué año cayo el Imperio Romano de Occidente?",
+        ServicioPregunta segundaPregunta = new QuintoNivel("¿En qué año cayo el Imperio Romano de Occidente?",
                 "A. 572", "B. 476", "C. 387",
                 "D. 457", "B", 300);
 
-        BancoPregunta terceraPregunta = new QuintoNivel("¿Quien hizo la voz de Mufasa en el rey leon?",
+        ServicioPregunta terceraPregunta = new QuintoNivel("¿Quien hizo la voz de Mufasa en el rey leon?",
                 "A. James Earl Jones", "B. Jorge Gonzalez",
                 "C. Eduardo Perez", "D. David Fernandez", "A", 300);
 
-        BancoPregunta cuartaPregunta = new QuintoNivel("¿En quimica que es la fusion?",
+        ServicioPregunta cuartaPregunta = new QuintoNivel("¿En quimica que es la fusion?",
                 "A. Una sustancia pasa de liquido a gaseoso",
                 "B. Una sustancia pasa de liquido a solido",
                 "C. Una sustancia pasa de solido a liquido",
                 "D. Una sustancia pasa de solido a gaseoso", "C", 300);
 
-        BancoPregunta quintaPregunta = new QuintoNivel("¿Cuál es la única ciudad que está en dos continentes distintos?",
+        ServicioPregunta quintaPregunta = new QuintoNivel("¿Cuál es la única ciudad que está en dos continentes distintos?",
                 "A. Moscu", "B. Estambul", "C. Novosibirsk",
                 "D. Perm", "B", 300);
 

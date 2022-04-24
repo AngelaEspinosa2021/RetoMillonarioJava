@@ -1,6 +1,6 @@
 package com.Sofka.bancopregunta;
 
-public class TercerNivel extends BancoPregunta {
+public class TercerNivel extends ServicioPregunta {
 
     //Constructor vacio
     public TercerNivel() {
@@ -15,26 +15,28 @@ public class TercerNivel extends BancoPregunta {
     //Agregando preguntas al primer tercer nivel
 
 
-    public String preguntaNivelDos() {
+    public String preguntaNivelTres() {
 
-        BancoPregunta primeraPregunta = new TercerNivel("¿En que año se jugo el primer Mundial de Futbol?", "A. 1935",
+        ServicioPregunta primeraPregunta = new TercerNivel("¿En que año se jugo el primer Mundial de Futbol?", "A. 1935",
                 "B. 1930", "C. 1829", "D. 1945", "B", 200);
 
-        BancoPregunta segundaPregunta = new TercerNivel("¿Qué inició la Segunda Guerra Mundial?",
+        ServicioPregunta segundaPregunta = new TercerNivel("¿Qué inició la Segunda Guerra Mundial?",
                 "A. La invacion de Alemania a Polonia",
                 "B. La invacion de Alemania a Austria", "C. La invacion de Alemania a Fancia",
                 "D. El bombardeo de Japon a Pearl Harbor", "A", 200);
 
-        BancoPregunta terceraPregunta = new TercerNivel("¿En que pelicula, Harry Potter libera a un elfo domestico?",
+        ServicioPregunta terceraPregunta = new TercerNivel("¿En que pelicula, Harry Potter libera a un elfo domestico?",
                 "A. Harry Potter y el Misterio del Principe", "B. Harry Potter y la Camara de los secretos",
                 "C. Harry Potter y el Prisionero de Azkaban", "D. Harry Potter y la Piedra Filosofal",
                 "B", 200);
 
-        BancoPregunta cuartaPregunta = new TercerNivel("¿Cual es el hueso mas grande del cuerpo humano?", "A. Femur",
-                "B. Perone", "C. Esternocleidomastoideo", "D. Torax", "A", 150);
+        ServicioPregunta cuartaPregunta = new TercerNivel("¿Que es un viviparo?", "A. Alguien que es mas vivo que los demas",
+                "B. Un animal que nace del utero de su madre", "C. Un animal que nace vivo",
+                "D. Un animal que nace y se muere", "B", 200);
 
-        BancoPregunta quintaPregunta = new TercerNivel("¿Cual es el rio mas largo del mundo?", "A. Rio Nilo",
-                "B. Rio Amazonas", "C. Rio Danubio", "D. Rio Ganges", "B", 150);
+        ServicioPregunta quintaPregunta = new TercerNivel("¿Cuál es el país más grande del mundo?", "A. China",
+                "B. Estados Unidos", "C. Rusia", "D. Canada", "C", 200);
+
 
         String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
         return (pregunta.toString());
