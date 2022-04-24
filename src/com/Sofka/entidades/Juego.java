@@ -16,7 +16,7 @@ public class Juego {
 
     public int iniciarJuego(String jugador){
         this.puntajeFinal = 0;
-
+        System.out.println("Logica del juego");
         System.out.println("Primera Pregunta");
         int[] nivelUno = this.primerNivel();
         asignarScoreJugador(nivelUno,jugador);
@@ -54,7 +54,6 @@ public class Juego {
 
 
     private int[] primerNivel() {
-        PrimerNivel primerNivel = new PrimerNivel();
         bancoPregunta.setPrimerNivel();
         while(comprobar != 3){
             String respuesta = jugador.nextLine();
@@ -79,20 +78,17 @@ public class Juego {
     }
 
     private int[] segundoNivel() {
-        SegundoNivel segundoNivel = new SegundoNivel();
-       // String segundaPregunta = segundoNivel.preguntaNivelDos();
-
+        bancoPregunta.setSegundoNivel();
         while (comprobar != 3){
             String respuesta = jugador.nextLine();
-            BancoPregunta preguntaDos = new BancoPregunta();
-            String resultado = preguntaDos.evaluarRespuesta(respuesta);
+            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
             System.out.println(resultado);
             validacion = asignarValidacion(resultado);
             switch (validacion)
             {
                 case -1:
                     comprobar = 1;
-                    //primerNivel.imprimirPregunta();
+                    bancoPregunta.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
@@ -106,20 +102,17 @@ public class Juego {
     }
 
     private int[] tercerNivel() {
-        TercerNivel tercerNivel = new TercerNivel();
-        //String terceraPregunta = tercerNivel.preguntaNivelTres();
-
+        bancoPregunta.setTercerNivel();
         while(comprobar!=3){
             String respuesta = jugador.nextLine();
-            BancoPregunta preguntaTres = new BancoPregunta();
-            String resultado = preguntaTres.evaluarRespuesta(respuesta);
+            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
             System.out.println(resultado);
             validacion = asignarValidacion(resultado);
             switch (validacion)
             {
                 case -1:
                     comprobar = 1;
-                    //primerNivel.imprimirPregunta();
+                    bancoPregunta.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
@@ -133,20 +126,17 @@ public class Juego {
     }
 
     private int[] cuartoNivel() {
-        CuartoNivel cuartoNivel = new CuartoNivel();
-        //String cuartaPregunta = cuartoNivel.preguntaNivelCuatro();
-
+        bancoPregunta.setCuartoNivel();
         while(comprobar!=3){
             String respuesta = jugador.nextLine();
-            BancoPregunta preguntaCuatro = new BancoPregunta();
-            String resultado = preguntaCuatro.evaluarRespuesta(respuesta);
+            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
             System.out.println(resultado);
             validacion = asignarValidacion(resultado);
             switch (validacion)
             {
                 case -1:
                     comprobar = 1;
-                    //primerNivel.imprimirPregunta();
+                    bancoPregunta.setCuartoNivel();
                     break;
                 default:
                     comprobar = 3;
@@ -160,20 +150,17 @@ public class Juego {
     }
 
     private int[] quintoNivel() {
-        QuintoNivel quintoNivel = new QuintoNivel();
-        //String quintaPregunta = quintoNivel.preguntaNivelCinco();
-
+        bancoPregunta.setQuintoNivel();
         while(comprobar != 3){
             String respuesta = jugador.nextLine();
-            BancoPregunta preguntaCinco = new BancoPregunta();
-            String resultado = preguntaCinco.evaluarRespuesta(respuesta);
+            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
             System.out.println(resultado);
             validacion = asignarValidacion(resultado);
             switch (validacion)
             {
                 case -1:
                     comprobar = 1;
-                    //primerNivel.imprimirPregunta();
+                    bancoPregunta.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
@@ -207,6 +194,6 @@ public class Juego {
 
     public static void main(String[] args) {
         Juego juego = new Juego();
-        juego.primerNivel();
+        juego.iniciarJuego("Jaime");
     }
 }

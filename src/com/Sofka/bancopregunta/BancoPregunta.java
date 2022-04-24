@@ -23,7 +23,6 @@ public class BancoPregunta {
         correcta=pregunta.getCorrecta();
     }
 
-
        public void setTercerNivel(){
            PrimerNivel primerNivel = new PrimerNivel();
            ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
@@ -76,13 +75,6 @@ public class BancoPregunta {
             return "Respuesta Correcta";
         }
             return "Respuesta Incorrecta";
-    }
-
-    public static void main(String[] args) {
-        BancoPregunta bancoPregunta = new BancoPregunta();
-        bancoPregunta.setPrimerNivel();
-        System.out.println(bancoPregunta.evaluarRespuesta("B"));
-        bancoPregunta.mostraInformacion();
     }
 
  }
