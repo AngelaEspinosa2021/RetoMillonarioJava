@@ -38,19 +38,20 @@ public class ServicioPregunta {
         String preguntaAsignada;
         switch (numero){
             case 1:
-                preguntaAsignada =preguntaUno.toString();
+                preguntaAsignada =preguntaUno.getCorrecta();
+                System.out.println(preguntaUno.toString());
                 break;
-            case 2:
-                preguntaAsignada =preguntaDos.toString();
+            case 2:   preguntaAsignada =preguntaDos.getCorrecta();
+                System.out.println(preguntaDos.toString());
                 break;
-            case 3:
-                preguntaAsignada =preguntaTres.toString();
+            case 3:   preguntaAsignada =preguntaTres.getCorrecta();
+                System.out.println(preguntaTres.toString());
                 break;
-            case 4:
-                preguntaAsignada= preguntaCuatro.toString();
+            case 4:   preguntaAsignada =preguntaCuatro.getCorrecta();
+                System.out.println(preguntaCuatro.toString());
                 break;
-            case 5:
-                preguntaAsignada=preguntaCinco.toString();
+            case 5:   preguntaAsignada =preguntaCinco.getCorrecta();
+                System.out.println(preguntaCinco.toString());
                 break;
             default:
                 return  ("Unexpected value: " + numero);
@@ -58,8 +59,9 @@ public class ServicioPregunta {
         return preguntaAsignada;
     }
 
-
-
+    public String getCorrecta() {
+        return correcta;
+    }
 
     @Override
     public String toString() {
