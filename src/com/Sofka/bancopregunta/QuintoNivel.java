@@ -14,7 +14,7 @@ public class QuintoNivel extends ServicioPregunta {
     //Agregando preguntas al primer nivel
 
 
-    public String preguntaNivelCinco() {
+    public ServicioPregunta preguntaNivelCinco() {
 
         ServicioPregunta primeraPregunta = new QuintoNivel("¿Cuándo se realizaron los primeros Juegos Olímpicos?",
                 "A. 1850", "B. 1896", "C. 1829",
@@ -38,7 +38,8 @@ public class QuintoNivel extends ServicioPregunta {
                 "A. Moscu", "B. Estambul", "C. Novosibirsk",
                 "D. Perm", "B", 300);
 
-        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
-        return (pregunta.toString());
+        ServicioPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return (pregunta);
+
     }
 }

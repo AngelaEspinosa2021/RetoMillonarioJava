@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class Juego {
 
+    public BancoPregunta bancoPregunta = new BancoPregunta();
+
     public int puntajeFinal;
     int[] resultadoPorNivel = new int[2];
     int validacion = 0;
@@ -53,19 +55,17 @@ public class Juego {
 
     private int[] primerNivel() {
         PrimerNivel primerNivel = new PrimerNivel();
-        String primeraPregunta = primerNivel.preguntasNivelUno();
-
+        bancoPregunta.setPrimerNivel();
         while(comprobar != 3){
             String respuesta = jugador.nextLine();
-            BancoPregunta preguntaUno = new BancoPregunta();
-            String resultado = preguntaUno.evaluarRespuesta(respuesta);
+            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
             System.out.println(resultado);
             validacion = asignarValidacion(resultado);
             switch (validacion)
             {
                 case -1:
                     comprobar = 1;
-                    //primerNivel.imprimirPregunta();
+                    bancoPregunta.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
@@ -80,7 +80,7 @@ public class Juego {
 
     private int[] segundoNivel() {
         SegundoNivel segundoNivel = new SegundoNivel();
-        String segundaPregunta = segundoNivel.preguntaNivelDos();
+       // String segundaPregunta = segundoNivel.preguntaNivelDos();
 
         while (comprobar != 3){
             String respuesta = jugador.nextLine();
@@ -107,7 +107,7 @@ public class Juego {
 
     private int[] tercerNivel() {
         TercerNivel tercerNivel = new TercerNivel();
-        String terceraPregunta = tercerNivel.preguntaNivelTres();
+        //String terceraPregunta = tercerNivel.preguntaNivelTres();
 
         while(comprobar!=3){
             String respuesta = jugador.nextLine();
@@ -134,7 +134,7 @@ public class Juego {
 
     private int[] cuartoNivel() {
         CuartoNivel cuartoNivel = new CuartoNivel();
-        String cuartaPregunta = cuartoNivel.preguntaNivelCuatro();
+        //String cuartaPregunta = cuartoNivel.preguntaNivelCuatro();
 
         while(comprobar!=3){
             String respuesta = jugador.nextLine();
@@ -161,7 +161,7 @@ public class Juego {
 
     private int[] quintoNivel() {
         QuintoNivel quintoNivel = new QuintoNivel();
-        String quintaPregunta = quintoNivel.preguntaNivelCinco();
+        //String quintaPregunta = quintoNivel.preguntaNivelCinco();
 
         while(comprobar != 3){
             String respuesta = jugador.nextLine();
@@ -205,4 +205,8 @@ public class Juego {
 
     }
 
+    public static void main(String[] args) {
+        Juego juego = new Juego();
+        juego.primerNivel();
+    }
 }

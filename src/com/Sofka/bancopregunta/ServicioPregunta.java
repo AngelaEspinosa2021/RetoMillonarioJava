@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class ServicioPregunta {
 
+    //Atributos
     protected String pregunta;
     protected String respuestaA;
     protected String respuestaB;
@@ -12,10 +13,11 @@ public class ServicioPregunta {
     protected String correcta;
     protected double puntaje;
 
+    //contructor vacio
     public ServicioPregunta(){
 
     }
-
+//Constructor con argumentos
     public ServicioPregunta(String pregunta, String respuestaA, String respuestaB, String respuestaC, String respuestaD, String correcta, double puntaje) {
         this.pregunta = pregunta;
         this.respuestaA = respuestaA;
@@ -34,34 +36,32 @@ public class ServicioPregunta {
     }
 
     //Agregar pregunta
-    public String asignarPregunta(ServicioPregunta preguntaUno, ServicioPregunta preguntaDos, ServicioPregunta preguntaTres, ServicioPregunta preguntaCuatro, ServicioPregunta preguntaCinco){
+    public ServicioPregunta asignarPregunta(ServicioPregunta preguntaUno, ServicioPregunta preguntaDos, ServicioPregunta preguntaTres, ServicioPregunta preguntaCuatro, ServicioPregunta preguntaCinco){
         int numero = numeroAleatorio();
-        String preguntaAsignada;
+        ServicioPregunta preguntaAsignada= new ServicioPregunta();
         switch (numero){
             case 1:
-                preguntaAsignada =preguntaUno.getCorrecta();
-                System.out.println(preguntaUno.toString());
+                preguntaAsignada =preguntaUno;
                 break;
-            case 2:   preguntaAsignada =preguntaDos.getCorrecta();
-                System.out.println(preguntaDos.toString());
+            case 2:   preguntaAsignada =preguntaDos;
                 break;
-            case 3:   preguntaAsignada =preguntaTres.getCorrecta();
-                System.out.println(preguntaTres.toString());
+            case 3:   preguntaAsignada =preguntaTres;
                 break;
-            case 4:   preguntaAsignada =preguntaCuatro.getCorrecta();
-                System.out.println(preguntaCuatro.toString());
+            case 4:   preguntaAsignada =preguntaCuatro;
                 break;
-            case 5:   preguntaAsignada =preguntaCinco.getCorrecta();
-                System.out.println(preguntaCinco.toString());
+            case 5:   preguntaAsignada =preguntaCinco;
                 break;
-            default:
-                return  ("Unexpected value: " + numero);
-        }
+            }
         return preguntaAsignada;
     }
 
     public String getCorrecta() {
         return correcta;
+    }
+
+    public void imprimirPregunta(BancoPregunta bancoPregunta){
+        System.out.println(bancoPregunta.toString());
+
     }
 
     @Override

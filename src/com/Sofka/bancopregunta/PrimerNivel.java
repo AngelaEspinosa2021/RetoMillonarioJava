@@ -13,7 +13,7 @@ public class PrimerNivel extends ServicioPregunta {
     }
 
     //Agregando preguntas al primer nivel
-    public String preguntasNivelUno() {
+    public ServicioPregunta preguntasNivelUno() {
 
         ServicioPregunta primeraPregunta = new PrimerNivel("Que equipo ha ganado mas copas del mundo", "A. Colombia",
                 "B. Argentina", "C. Peru", "D. Brasil", "D", 100);
@@ -30,7 +30,7 @@ public class PrimerNivel extends ServicioPregunta {
         ServicioPregunta quintaPregunta = new PrimerNivel("Nombre del libertador de Colombia", "A. Cristobal Colon",
                 "B. Napoleon Bonaparte", "C. Simon Bolivar", "D. Diomedez Diaz", "C", 100);
 
-        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        ServicioPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
         return (pregunta);
 
 
