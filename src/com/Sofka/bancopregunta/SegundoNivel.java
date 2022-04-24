@@ -1,6 +1,6 @@
 package com.Sofka.bancopregunta;
 
-public class SegundoNivel extends BancoPregunta{
+public class SegundoNivel extends ServicioPregunta {
 
     //Constructor vacio
     public SegundoNivel() {
@@ -17,19 +17,19 @@ public class SegundoNivel extends BancoPregunta{
 
     public String preguntaNivelDos() {
 
-        BancoPregunta primeraPregunta = new SegundoNivel("¿A que jugador de futbol le dicen el VICHO?", "A. Lionel Messi",
+        ServicioPregunta primeraPregunta = new SegundoNivel("¿A que jugador de futbol le dicen el VICHO?", "A. Lionel Messi",
                 "B. Rhonaldinho", "C. Cristiano Ronaldo", "D. Kylian Mbappe", "C", 150);
 
-        BancoPregunta segundaPregunta = new SegundoNivel("¿Que famoso filosofo, fue maestro de Alejandro Magno?", "A. Socrates",
+        ServicioPregunta segundaPregunta = new SegundoNivel("¿Que famoso filosofo, fue maestro de Alejandro Magno?", "A. Socrates",
                 "B. Platon", "C. Aristoteles", "D. Descartes", "C", 150);
 
-        BancoPregunta terceraPregunta = new SegundoNivel("¿Cual es el nombre del villano principal del señor de los anillos?", "A. Gandalf",
+        ServicioPregunta terceraPregunta = new SegundoNivel("¿Cual es el nombre del villano principal del señor de los anillos?", "A. Gandalf",
                 "B. Saruman", "C. Frodo", "D. Sauron", "D", 150);
 
-        BancoPregunta cuartaPregunta = new SegundoNivel("¿Cual es el hueso mas grande del cuerpo humano?", "A. Femur",
+        ServicioPregunta cuartaPregunta = new SegundoNivel("¿Cual es el hueso mas grande del cuerpo humano?", "A. Femur",
                 "B. Perone", "C. Esternocleidomastoideo", "D. Torax", "A", 150);
 
-        BancoPregunta quintaPregunta = new SegundoNivel("¿Cual es el rio mas largo del mundo?", "A. Rio Nilo",
+        ServicioPregunta quintaPregunta = new SegundoNivel("¿Cual es el rio mas largo del mundo?", "A. Rio Nilo",
                 "B. Rio Amazonas", "C. Rio Danubio", "D. Rio Ganges", "B", 150);
 
         String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);

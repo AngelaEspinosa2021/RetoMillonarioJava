@@ -28,6 +28,10 @@ public class Main {
                     case 1:
                         var nombreJugador = jugador.validarNombreJugador();
                         jugador.guardarNombreJugador(nombreJugador);
+                        int valor = juego.iniciarJuego(nombreJugador);
+                        if(valor == 0){
+                            break;
+                        }
                         break;
                     case 2:
                         jugador.mostrarListaJugadores();
@@ -36,13 +40,20 @@ public class Main {
                         break;
                     default:
                         System.out.println("Seleccione una opcion valida");
+                        break;
 
                 }
+                System.out.println("===========================");
+                System.out.println("Seleccion una opcion:      ");
+                System.out.println(" 1. Iniciar Nueva Partida. ");
+                System.out.println(" 0. Salir del Juego      . ");
+                opcion=menu.nextInt();
+
             } catch (Exception e) {
                 System.out.println("Favor ingresar solo números.");
                 opcion = 9;
             }
         }
-
+        System.out.println("Muchas Gracias Hasta Pronto");
     }
 }

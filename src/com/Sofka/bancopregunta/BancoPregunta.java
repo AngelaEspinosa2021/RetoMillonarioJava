@@ -1,24 +1,29 @@
 package com.Sofka.bancopregunta;
 
-import java.util.Random;
-
 public class BancoPregunta {
-    public PrimerNivel tercerNivel;
+
+    public PrimerNivel TercerNivel;
     public SegundoNivel segundoNivel;
     public TercerNivel tercerNivel;
     public CuartoNivel cuartoNivel;
     public QuintoNivel quintoNivel;
     public String respuestaCorrecta;
 
+
+    public BancoPregunta(){
+
+    }
+
     public void setPrimerNivel(){
         TercerNivel = new PrimerNivel();
-        respuestaCorrecta = TercerNivel.preguntasNivelUno();
+       respuestaCorrecta = TercerNivel.preguntasNivelUno();
     }
 
     public void setSegundoNivel(){
         segundoNivel = new SegundoNivel();
         respuestaCorrecta = (segundoNivel.preguntaNivelDos());
     }
+
     public void setTercerNivel(){
         tercerNivel = new TercerNivel();
         respuestaCorrecta = (tercerNivel.preguntaNivelTres());
@@ -81,4 +86,6 @@ public class BancoPregunta {
         System.out.println("-----------");
 
     }
+
+
 }
