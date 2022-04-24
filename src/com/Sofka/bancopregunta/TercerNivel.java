@@ -15,7 +15,7 @@ public class TercerNivel extends ServicioPregunta {
     //Agregando preguntas al primer tercer nivel
 
 
-    public String preguntaNivelTres() {
+    public ServicioPregunta preguntaNivelTres() {
 
         ServicioPregunta primeraPregunta = new TercerNivel("¿En que año se jugo el primer Mundial de Futbol?", "A. 1935",
                 "B. 1930", "C. 1829", "D. 1945", "B", 200);
@@ -38,8 +38,9 @@ public class TercerNivel extends ServicioPregunta {
                 "B. Estados Unidos", "C. Rusia", "D. Canada", "C", 200);
 
 
-        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
-        return (pregunta.toString());
+        ServicioPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return (pregunta);
+
     }
 
 }

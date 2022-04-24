@@ -2,39 +2,47 @@ package com.Sofka.bancopregunta;
 
 public class BancoPregunta {
 
-    public PrimerNivel primerNivel;
-    public SegundoNivel segundoNivel;
-    public TercerNivel tercerNivel;
-    public CuartoNivel cuartoNivel;
-    public QuintoNivel quintoNivel;
-    public String respuestaCorrecta;
+    public String correcta;
+    public String informacion;
 
     public BancoPregunta(){
 
     }
 //Agregar preguntas al juego
     public void setPrimerNivel(){
-        primerNivel = new PrimerNivel();
-        respuestaCorrecta = primerNivel.preguntasNivelUno();
+       PrimerNivel primerNivel = new PrimerNivel();
+       ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+        System.out.println(informacion=pregunta.toString());
+        correcta=pregunta.getCorrecta();
     }
 
     public void setSegundoNivel(){
-        segundoNivel = new SegundoNivel();
-        respuestaCorrecta = (segundoNivel.preguntaNivelDos());
+        PrimerNivel primerNivel = new PrimerNivel();
+        ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+        System.out.println(informacion=pregunta.toString());
+        correcta=pregunta.getCorrecta();
     }
 
 
        public void setTercerNivel(){
-        tercerNivel = new TercerNivel();
-        respuestaCorrecta = (tercerNivel.preguntaNivelTres());
-    }
+           PrimerNivel primerNivel = new PrimerNivel();
+           ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+           System.out.println(informacion=pregunta.toString());
+           correcta=pregunta.getCorrecta();
+       }
     public void setCuartoNivel(){
-        cuartoNivel = new CuartoNivel();
-        respuestaCorrecta = (cuartoNivel.preguntaNivelCuatro());
+        PrimerNivel primerNivel = new PrimerNivel();
+        ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+        System.out.println(informacion=pregunta.toString());
+        correcta=pregunta.getCorrecta();
+
     }
     public void setQuintoNivel() {
-        quintoNivel = new QuintoNivel();
-        respuestaCorrecta = (quintoNivel.preguntaNivelCinco());
+        PrimerNivel primerNivel = new PrimerNivel();
+        ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+        System.out.println(informacion=pregunta.toString());
+        correcta=pregunta.getCorrecta();
+
     }
 
     //Vereficar respuesta
@@ -42,8 +50,9 @@ public class BancoPregunta {
         String opciones[] = {"A", "B", "C", "D", "R"};
         String captura = "";
         for (String elemento:opciones) {
-            if(respuestaCorrecta.equalsIgnoreCase(usuario)){
+            if(elemento.equalsIgnoreCase(usuario)){
                 captura=usuario;
+                break;
             }
                 captura="N";
         }
@@ -58,14 +67,25 @@ public class BancoPregunta {
         }
     }
 
+    public void mostraInformacion(){
+        System.out.println(this.informacion);
+    }
+
     public String validarRespuesta(String usuario){
-        if(respuestaCorrecta.equalsIgnoreCase(usuario)){
+        if(this.correcta.equalsIgnoreCase(usuario)){
             return "Respuesta Correcta";
         }
             return "Respuesta Incorrecta";
     }
 
+    public static void main(String[] args) {
+        BancoPregunta bancoPregunta = new BancoPregunta();
+        bancoPregunta.setPrimerNivel();
+        System.out.println(bancoPregunta.evaluarRespuesta("B"));
+        bancoPregunta.mostraInformacion();
     }
+
+ }
 
 
 

@@ -14,7 +14,7 @@ public class CuartoNivel extends ServicioPregunta {
     //Agregando preguntas al primer nivel
 
 
-    public String preguntaNivelCuatro() {
+    public ServicioPregunta preguntaNivelCuatro() {
 
         ServicioPregunta primeraPregunta = new CuartoNivel("¿En que año gano Roger Federer su primer Grand Slam?",
                 "A. 2000", "B. 2005", "C. 2003", "D. 2004",
@@ -36,7 +36,9 @@ public class CuartoNivel extends ServicioPregunta {
         ServicioPregunta quintaPregunta = new CuartoNivel("¿En que continente esta ubicado Surinam?", "A. Asia",
                 "B. America del sur", "C. Europa", "D. Africa", "B", 250);
 
-        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
-        return (pregunta.toString());
+
+        ServicioPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return (pregunta);
+
     }
 }
