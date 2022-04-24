@@ -15,7 +15,7 @@ public class SegundoNivel extends ServicioPregunta {
     //Agregando preguntas al primer nivel
 
 
-    public String preguntaNivelDos() {
+    public ServicioPregunta preguntaNivelDos() {
 
         ServicioPregunta primeraPregunta = new SegundoNivel("¿A que jugador de futbol le dicen el VICHO?", "A. Lionel Messi",
                 "B. Rhonaldinho", "C. Cristiano Ronaldo", "D. Kylian Mbappe", "C", 150);
@@ -32,8 +32,9 @@ public class SegundoNivel extends ServicioPregunta {
         ServicioPregunta quintaPregunta = new SegundoNivel("¿Cual es el rio mas largo del mundo?", "A. Rio Nilo",
                 "B. Rio Amazonas", "C. Rio Danubio", "D. Rio Ganges", "B", 150);
 
-        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
-        return (pregunta.toString());
+        ServicioPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return (pregunta);
+
 
     }
 }
