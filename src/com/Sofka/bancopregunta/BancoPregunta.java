@@ -1,7 +1,6 @@
 package com.Sofka.bancopregunta;
 
 import java.util.Random;
-import java.util.prefs.BackingStoreException;
 
 public class BancoPregunta {
 
@@ -34,37 +33,31 @@ public class BancoPregunta {
         return  random.nextInt(5) + 1;
     }
 
-    public BancoPregunta asignarPregunta(BancoPregunta preguntaUno,BancoPregunta preguntaDos,BancoPregunta preguntaTres,BancoPregunta preguntaCuatro,BancoPregunta preguntaCinco){
-        BancoPregunta bancoPregunta = new BancoPregunta();
+    public String asignarPregunta(BancoPregunta preguntaUno,BancoPregunta preguntaDos,BancoPregunta preguntaTres,BancoPregunta preguntaCuatro,BancoPregunta preguntaCinco){
         int numero = numeroAleatorio();
+        String preguntaAsignada;
         switch (numero){
             case 1:
-                bancoPregunta=preguntaUno;
+                preguntaAsignada =preguntaUno.toString();
                 break;
             case 2:
-                bancoPregunta=preguntaDos;
+                preguntaAsignada =preguntaDos.toString();
                 break;
             case 3:
-                bancoPregunta=preguntaTres;
+                preguntaAsignada =preguntaTres.toString();
                 break;
             case 4:
-                bancoPregunta=preguntaCuatro;
+                preguntaAsignada= preguntaCuatro.toString();
                 break;
             case 5:
-                bancoPregunta=preguntaCinco;
+                preguntaAsignada=preguntaCinco.toString();
                 break;
-
             default:
-                throw new IllegalStateException("Unexpected value: " + numero);
+                return  ("Unexpected value: " + numero);
         }
-        return bancoPregunta;
-
+        return preguntaAsignada;
     }
 
-    public String imprimirPregunta(BancoPregunta pregunta){
-      return pregunta.toString();
-
-    }
 
 
 

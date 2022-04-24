@@ -38,7 +38,7 @@ public class QuintoNivel extends BancoPregunta{
                 "A. Moscu", "B. Estambul", "C. Novosibirsk",
                 "D. Perm", "B", 300);
 
-        BancoPregunta pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
-        return this.imprimirPregunta(pregunta);
+        String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
+        return (pregunta.toString());
     }
 }
