@@ -39,6 +39,7 @@ public class Main {
                         jugadores.consultarJugadores();
                         break;
                     case 0:
+                        jugadores.eliminarJugadores();
                         break;
                     default:
                         System.out.println("Seleccione una opcion valida");
