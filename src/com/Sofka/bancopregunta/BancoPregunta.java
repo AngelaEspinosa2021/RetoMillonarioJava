@@ -1,6 +1,7 @@
 package com.Sofka.bancopregunta;
 
 public class BancoPregunta {
+
     public PrimerNivel TercerNivel;
     public SegundoNivel segundoNivel;
     public TercerNivel tercerNivel;
@@ -11,10 +12,10 @@ public class BancoPregunta {
     public BancoPregunta(){
 
     }
-
+//Agregar preguntas al juego
     public void setPrimerNivel(){
         TercerNivel = new PrimerNivel();
-       respuestaCorrecta = TercerNivel.preguntasNivelUno();
+        respuestaCorrecta = TercerNivel.preguntasNivelUno();
     }
 
     public void setSegundoNivel(){
@@ -34,6 +35,7 @@ public class BancoPregunta {
         respuestaCorrecta = (quintoNivel.preguntaNivelCinco());
     }
 
+    //Vereficar respuesta
     public String evaluarRespuesta(String correcta, String usuario) {
         String opciones[] = {"A", "B", "C", "D", "R"};
         String captura = "";
@@ -58,7 +60,7 @@ public class BancoPregunta {
         if(respuestaCorrecta.equalsIgnoreCase(usuario)){
             return "Respuesta Correcta";
         }
-            return "Respuesta ncorrecta";
+            return "Respuesta Incorrecta";
     }
 
     }

@@ -36,11 +36,6 @@ public class PrimerNivel extends ServicioPregunta {
 
     }
 
-    public static void main(String[] args) {
-        PrimerNivel primerNivel = new PrimerNivel();
-        System.out.println(primerNivel.preguntasNivelUno());
-    }
-
 
 }
 

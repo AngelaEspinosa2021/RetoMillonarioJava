@@ -33,6 +33,7 @@ public class ServicioPregunta {
         return  random.nextInt(5) + 1;
     }
 
+    //Agregar pregunta
     public String asignarPregunta(ServicioPregunta preguntaUno, ServicioPregunta preguntaDos, ServicioPregunta preguntaTres, ServicioPregunta preguntaCuatro, ServicioPregunta preguntaCinco){
         int numero = numeroAleatorio();
         String preguntaAsignada;
