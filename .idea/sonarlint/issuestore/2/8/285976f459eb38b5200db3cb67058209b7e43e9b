@@ -1,0 +1,21 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(õ±¥ƒÿÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(ÂäÃ×ÿÿÿÿÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(†€¬ƒûÿÿÿÿ
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(ƒîëªûÿÿÿÿ
+Q
+java:S11174";Rename "jugador" which hides the field declared at line 10.(²Ö‰—
+S	java:S1065"9Replace this use of System.out or System.err by a logger.(¿ŒËøÿÿÿÿ
+E
+java:S1128"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ
+F
+java:S1068
+"+Remove this unused "jugador" private field.(–ş÷úÿÿÿÿ
+@
+java:S1068"*Remove this unused "premio" private field.(»°†¥
+C
+java:S1068"-Remove this unused "idJugador" private field.(Ìı‡
+1
+java:S1700
+"Rename field "jugador"(–ş÷úÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ş’“´úÿÿÿÿ

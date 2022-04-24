@@ -10,6 +10,7 @@ public class PrimerNivel extends ServicioPregunta {
     //contructor con super del padre
     public PrimerNivel(String pregunta, String respuestaA, String respuestaB, String respuestaC, String respuestaD, String correcta, double puntaje) {
         super(pregunta, respuestaA, respuestaB, respuestaC, respuestaD, correcta, puntaje);
+
     }
 
     //Agregando preguntas al primer nivel
@@ -33,21 +34,7 @@ public class PrimerNivel extends ServicioPregunta {
         String pregunta=this.asignarPregunta(primeraPregunta,segundaPregunta,terceraPregunta,cuartaPregunta,quintaPregunta);
         return (pregunta);
 
-
     }
-
-<<<<<<< HEAD
-=======
-    /*public void imprimirPregunta() {
-        System.out.println(this.informacion);
-    }*/
-
-    public static void main(String[] args) {
-        PrimerNivel primerNivel = new PrimerNivel();
-        System.out.println(primerNivel.preguntasNivelUno());
-    }
-
->>>>>>> main
 
 }
 

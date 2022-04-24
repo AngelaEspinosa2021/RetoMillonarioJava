@@ -1,62 +1,52 @@
 package com.Sofka.bancopregunta;
 
 public class BancoPregunta {
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> ed396372a7b27a20cdbc9c535d062b0e9781cb42
->>>>>>> main
-    public PrimerNivel TercerNivel;
+    public PrimerNivel primerNivel;
     public SegundoNivel segundoNivel;
     public TercerNivel tercerNivel;
     public CuartoNivel cuartoNivel;
     public QuintoNivel quintoNivel;
     public String respuestaCorrecta;
-<<<<<<< HEAD
-
-=======
->>>>>>> ed396372a7b27a20cdbc9c535d062b0e9781cb42
 
     public BancoPregunta(){
 
     }
 //Agregar preguntas al juego
     public void setPrimerNivel(){
-        TercerNivel = new PrimerNivel();
-        respuestaCorrecta = TercerNivel.preguntasNivelUno();
+        primerNivel = new PrimerNivel();
+        respuestaCorrecta = primerNivel.preguntasNivelUno();
+        System.out.println(primerNivel.toString());
     }
 
     public void setSegundoNivel(){
         segundoNivel = new SegundoNivel();
-        respuestaCorrecta = (segundoNivel.preguntaNivelDos());
+        respuestaCorrecta = segundoNivel.preguntaNivelDos();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> ed396372a7b27a20cdbc9c535d062b0e9781cb42
     public void setTercerNivel(){
         tercerNivel = new TercerNivel();
-        respuestaCorrecta = (tercerNivel.preguntaNivelTres());
+        respuestaCorrecta = tercerNivel.preguntaNivelTres();
+        System.out.println(tercerNivel.toString());
     }
     public void setCuartoNivel(){
         cuartoNivel = new CuartoNivel();
-        respuestaCorrecta = (cuartoNivel.preguntaNivelCuatro());
+        respuestaCorrecta = cuartoNivel.preguntaNivelCuatro();
     }
     public void setQuintoNivel() {
         quintoNivel = new QuintoNivel();
-        respuestaCorrecta = (quintoNivel.preguntaNivelCinco());
+        respuestaCorrecta = quintoNivel.preguntaNivelCinco();
     }
 
+
     //Vereficar respuesta
-    public String evaluarRespuesta(String correcta, String usuario) {
+    public String evaluarRespuesta(String usuario) {
         String opciones[] = {"A", "B", "C", "D", "R"};
         String captura = "";
         for (String elemento:opciones) {
-            if(respuestaCorrecta.equalsIgnoreCase(usuario)){
+            if(elemento.equalsIgnoreCase(usuario)){
                 captura=usuario;
+                break;
             }
                 captura="N";
         }
@@ -76,6 +66,11 @@ public class BancoPregunta {
             return "Respuesta Correcta";
         }
             return "Respuesta Incorrecta";
+    }
+
+    public static void main(String[] args) {
+        BancoPregunta bancoPregunta = new BancoPregunta();
+        bancoPregunta.setPrimerNivel();
     }
 
     }
