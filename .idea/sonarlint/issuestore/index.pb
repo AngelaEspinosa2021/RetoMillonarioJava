@@ -1,6 +1,4 @@
 
-T
-$src/com/Sofka/entidades/Jugador.java,2\8\285976f459eb38b5200db3cb67058209b7e43e9b
 ^
 .src/com/Sofka/bancopregunta/BancoPregunta.java,2\d\2d46294b7e61a4eb64a31422af026978b4b8bdeb
 \

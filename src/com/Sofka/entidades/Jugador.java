@@ -10,8 +10,6 @@ public class Jugador {
     private String jugador;
     private double premio;
     private static int idJugador;
-    private List<String> listaJugadores = new ArrayList<>();
-
 
     //constructores
     public Jugador(){
@@ -35,24 +33,6 @@ public class Jugador {
             validarNombre = nombreUsuario;
         }
         return validarNombre;
-    }
-
-    public void guardarNombreJugador(String nombreJugador){
-        if(listaJugadores.contains(nombreJugador)){
-            System.out.println("El usuario ya esta registrado");
-        }
-        listaJugadores.add(nombreJugador);
-    }
-
-    public void mostrarListaJugadores(){
-        if (listaJugadores.isEmpty()){
-            System.out.println("No hay registro de usuarios");
-        }
-        int contador = 1;
-        for (String jugador : listaJugadores){
-            System.out.println(contador + ": " + jugador);
-            contador++;
-        }
     }
 
 }
