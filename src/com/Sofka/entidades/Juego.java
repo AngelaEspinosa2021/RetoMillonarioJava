@@ -6,7 +6,6 @@ import com.Sofka.controladores.Consultas;
 import java.util.Scanner;
 
 public class Juego {
-
     /*Jugador jugador = new Jugador();
     Consultas jugadores = new Consultas();*/
     public BancoPregunta bancoPregunta = new BancoPregunta();
@@ -20,7 +19,6 @@ public class Juego {
 
     public int iniciarJuego(String jugador) {
         this.puntajeFinal = 0;
-        System.out.println("Logica del juego");
         System.out.println("Primera Pregunta");
         int nivelUno = this.primerNivel();
         if (nivelUno == 1)
