@@ -1,5 +1,6 @@
 package com.Sofka.controladores;
 
+import javax.swing.*;
 import java.sql.*;
 
 public class Consultas {
@@ -24,11 +25,12 @@ public class Consultas {
             }
         }
 
-        public void agregarJugador(String jugador){
+        public void agregarJugador(String jugador/*, int puntaje*/){
             try{
-                String ps = "INSERT INTO jugadores VALUES(?, '0')";
+                String ps = "INSERT INTO jugadores VALUES(?, ?)";
                 PreparedStatement nueva = conex.prepareStatement(ps);
                 nueva.setString(1, jugador);
+                //nueva.setInt(2, puntaje);
                 nueva.executeUpdate();
 
             }catch (Exception e){
@@ -36,5 +38,17 @@ public class Consultas {
                 e.printStackTrace();
             }
         }
+
+    public void eliminarJugadores(){
+        try{
+            String sql = "DELETE FROM jugadores";
+            PreparedStatement nueva = conex.prepareStatement(sql);
+            nueva.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Registros Eliminados");
+        }catch (Exception e){
+            System.out.println("Error al consultar en la base de datos");
+            e.printStackTrace();
+        }
+    }
 }
 
