@@ -39,7 +39,7 @@ public class Juego {
         while(comprobar != 3){
             String respuesta = jugador.nextLine();
             BancoPregunta preguntaDos = new BancoPregunta();
-            String resultado = preguntaDos.evaluarRespuesta(primeraPregunta,respuesta);
+            String resultado = preguntaDos.evaluarRespuesta(respuesta);
             System.out.println(resultado);
             validacion = -1;
             if (resultado.equalsIgnoreCase("Respuesta incorrecta")){

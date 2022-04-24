@@ -38,7 +38,7 @@ public class BancoPregunta {
     }
 
     //Vereficar respuesta
-    public String evaluarRespuesta(String correcta, String usuario) {
+    public String evaluarRespuesta(String usuario) {
         String opciones[] = {"A", "B", "C", "D", "R"};
         String captura = "";
         for (String elemento:opciones) {
