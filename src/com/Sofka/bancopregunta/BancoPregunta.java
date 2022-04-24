@@ -1,13 +1,24 @@
 package com.Sofka.bancopregunta;
 
 public class BancoPregunta {
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> ed396372a7b27a20cdbc9c535d062b0e9781cb42
+>>>>>>> main
     public PrimerNivel TercerNivel;
     public SegundoNivel segundoNivel;
     public TercerNivel tercerNivel;
     public CuartoNivel cuartoNivel;
     public QuintoNivel quintoNivel;
     public String respuestaCorrecta;
+<<<<<<< HEAD
+
+=======
+>>>>>>> ed396372a7b27a20cdbc9c535d062b0e9781cb42
 
     public BancoPregunta(){
 
@@ -22,6 +33,10 @@ public class BancoPregunta {
         segundoNivel = new SegundoNivel();
         respuestaCorrecta = (segundoNivel.preguntaNivelDos());
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ed396372a7b27a20cdbc9c535d062b0e9781cb42
     public void setTercerNivel(){
         tercerNivel = new TercerNivel();
         respuestaCorrecta = (tercerNivel.preguntaNivelTres());
