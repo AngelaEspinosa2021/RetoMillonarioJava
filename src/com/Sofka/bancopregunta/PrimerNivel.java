@@ -36,18 +36,6 @@ public class PrimerNivel extends ServicioPregunta {
 
     }
 
-<<<<<<< HEAD
-    /*public void imprimirPregunta() {
-        System.out.println(this.informacion);
-    }*/
-
-    public static void main(String[] args) {
-        PrimerNivel primerNivel = new PrimerNivel();
-        System.out.println(primerNivel.preguntasNivelUno());
-    }
-
-=======
->>>>>>> 222363283428c74be7dfa1ff27e2f90c927aa826
 }
 
 

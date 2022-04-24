@@ -2,18 +2,8 @@ package com.Sofka.bancopregunta;
 
 public class BancoPregunta {
 
-<<<<<<< HEAD
-    public PrimerNivel TercerNivel;
-    public SegundoNivel segundoNivel;
-    public TercerNivel tercerNivel;
-    public CuartoNivel cuartoNivel;
-    public QuintoNivel quintoNivel;
-    public String respuestaCorrecta;
-
-=======
     public String correcta;
     public String informacion;
->>>>>>> 222363283428c74be7dfa1ff27e2f90c927aa826
 
     public BancoPregunta(){
 
@@ -33,20 +23,12 @@ public class BancoPregunta {
         correcta=pregunta.getCorrecta();
     }
 
-<<<<<<< HEAD
-    public void setTercerNivel(){
-        tercerNivel = new TercerNivel();
-        respuestaCorrecta = (tercerNivel.preguntaNivelTres());
-    }
-=======
-
        public void setTercerNivel(){
            PrimerNivel primerNivel = new PrimerNivel();
            ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
            System.out.println(informacion=pregunta.toString());
            correcta=pregunta.getCorrecta();
        }
->>>>>>> 222363283428c74be7dfa1ff27e2f90c927aa826
     public void setCuartoNivel(){
         PrimerNivel primerNivel = new PrimerNivel();
         ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
