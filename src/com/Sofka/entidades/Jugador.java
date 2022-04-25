@@ -12,22 +12,22 @@ public class Jugador {
     private static int idJugador;
 
     //constructores
-    public Jugador(){
+    public Jugador() {
 
     }
 
-    public Jugador(String jugador){
+    public Jugador(String jugador) {
         this.jugador = jugador;
     }
 
     //metodos
-    public String validarNombreJugador(){
+    public String validarNombreJugador() {
         Scanner capturarNombre = new Scanner(System.in);
         String validarNombre = "";
-        while (validarNombre.isEmpty()){
+        while (validarNombre.isEmpty()) {
             System.out.println("Ingrese el nombre del jugador:");
             String nombreUsuario = capturarNombre.nextLine();
-            if(nombreUsuario.isEmpty()) {
+            if (nombreUsuario.isEmpty()) {
                 System.out.println("Debe ingresar un nombre de usuario.");
             }
             validarNombre = nombreUsuario;
