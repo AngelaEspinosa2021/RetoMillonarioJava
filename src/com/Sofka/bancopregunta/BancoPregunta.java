@@ -64,7 +64,7 @@ public class BancoPregunta {
                 return "El usuario se retira";
             default:
 
-                return this.evaluarRespuesta(captura);
+                return this.validarRespuesta(captura);
         }
     }
 
