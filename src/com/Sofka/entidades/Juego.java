@@ -7,14 +7,23 @@ import java.util.Scanner;
 
 public class Juego {
 
+<<<<<<< HEAD
     Consultas nueva = new Consultas();
     public int puntajeFinal;
+=======
+    public int puntajeFinal;
+    //Consultas nueva = new Consultas();
+>>>>>>> db65c4ea707be5c9c7b7a48f19cc4306155cb842
     public int retorno;
     public int iniciarJuego(String usuario) {
 
         System.out.println("Primera Pregunta");
         int nivelUno = this.nivelUno();
+<<<<<<< HEAD
         this.puntajeFinal = 0;
+=======
+        this.puntajeFinal += 0;
+>>>>>>> db65c4ea707be5c9c7b7a48f19cc4306155cb842
         retorno= this.avanzarNivel(nivelUno,usuario,this.puntajeFinal,100);
         if(retorno==0){
             return 0;
