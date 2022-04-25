@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Juego {
 
     public int puntajeFinal;
+    //Consultas nueva = new Consultas();
     public int retorno;
     public int iniciarJuego(String usuario) {
 
@@ -205,8 +206,10 @@ public class Juego {
     }
 
     public void puntuacion(String usuario, int puntajeFinal) {
+        //nueva.agregarJugador(usuario, puntajeFinal);
         System.out.println(usuario + " Tu puntaje fue de: " + puntajeFinal);
     }
+
 
     public void asignarScoreJugador(int nivel, String jugador,int idNivel)
     {

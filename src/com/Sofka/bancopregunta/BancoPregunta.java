@@ -59,15 +59,12 @@ public class BancoPregunta {
         }
         switch (captura.toUpperCase()){
             case "N":
-                System.out.println("Ingrese una opción valida");
-                break;
+                return  "Ingrese una opción valida";
             case "R":
-                System.out.println("Salio del juego");
-                break;
+                return "El usuario se retira";
             default:
-                return this.validarRespuesta(captura);
+                return "Error";
         }
-        return "FIN.";
     }
 
     public void mostraInformacion(){
