@@ -5,7 +5,15 @@
 -src/com/Sofka/bancopregunta/SegundoNivel.java,1\e\1e1bdf5130c3ea5b19b165962d970a644e013228
 \
 ,src/com/Sofka/bancopregunta/CuartoNivel.java,e\a\eacf483f892f352ee54564f00731a89c8cbf4e5f
-a
-1src/com/Sofka/bancopregunta/ServicioPregunta.java,d\7\d74b613a764e995939a84ff54fd744574d868ff3
 \
 ,src/com/Sofka/bancopregunta/QuintoNivel.java,b\f\bf3d2ebe8df587e8e431c689a4d24ff02c52491b
+]
+-src/com/Sofka/controladores/dbController.java,6\2\62b90f91ae8300f0ef943a38ddce7654589563a5
+a
+1src/com/Sofka/bancopregunta/ServicioPregunta.java,d\7\d74b613a764e995939a84ff54fd744574d868ff3
+^
+.src/com/Sofka/bancopregunta/BancoPregunta.java,2\d\2d46294b7e61a4eb64a31422af026978b4b8bdeb
+Z
+*src/com/Sofka/controladores/Consultas.java,f\4\f47a776fa7da5ccc1d967249ae795152562d701c
+\
+,src/com/Sofka/bancopregunta/TercerNivel.java,f\2\f2864ed2c607aac20c3e8f2c51ff830c301801a4

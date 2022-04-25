@@ -1,0 +1,17 @@
+
+7
+java:S1116"Remove this empty statement.(Á’ÁÎüÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(÷‰ç¦
+N	java:S106"9Replace this use of System.out or System.err by a logger.(£˜šá
+Q	java:S125!"<This block of commented-out lines of code should be removed.(«ýƒ
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(£˜šá
+N	java:S1061"9Replace this use of System.out or System.err by a logger.(£˜šá
+}
+java:S1192"gDefine a constant instead of duplicating this literal "Error al consultar en la base de datos" 3 times.(£˜šá
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’£¥‹üÿÿÿÿ
+e
+java:S2095-"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(éì¶ã
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÖÙÐýÿÿÿÿ
+b
+java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(¥ôöÚûÿÿÿÿ
