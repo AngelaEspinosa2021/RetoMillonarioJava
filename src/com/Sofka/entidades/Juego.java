@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class Juego {
 
+    Consultas nueva = new Consultas();
     public int puntajeFinal;
-    //Consultas nueva = new Consultas();
     public int retorno;
     public int iniciarJuego(String usuario) {
 
         System.out.println("Primera Pregunta");
         int nivelUno = this.nivelUno();
-        this.puntajeFinal += 0;
+        this.puntajeFinal = 0;
         retorno= this.avanzarNivel(nivelUno,usuario,this.puntajeFinal,100);
         if(retorno==0){
             return 0;
@@ -206,7 +206,7 @@ public class Juego {
     }
 
     public void puntuacion(String usuario, int puntajeFinal) {
-        //nueva.agregarJugador(usuario, puntajeFinal);
+        nueva.agregarJugador(usuario, puntajeFinal);
         System.out.println(usuario + " Tu puntaje fue de: " + puntajeFinal);
     }
 
