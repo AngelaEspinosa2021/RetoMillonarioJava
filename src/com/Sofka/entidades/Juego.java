@@ -14,7 +14,7 @@ public class Juego {
 
         System.out.println("Primera Pregunta");
         int nivelUno = this.nivelUno();
-        this.puntajeFinal += 100;
+        this.puntajeFinal += 0;
         retorno= this.avanzarNivel(nivelUno,usuario,this.puntajeFinal,100);
         if(retorno==0){
             return 0;

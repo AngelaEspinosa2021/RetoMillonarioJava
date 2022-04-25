@@ -63,7 +63,7 @@ public class BancoPregunta {
             case "R":
                 return "El usuario se retira";
             default:
-                return "Error";
+                return this.evaluarRespuesta(captura);
         }
     }
 
