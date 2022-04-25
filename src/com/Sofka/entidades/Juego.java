@@ -6,191 +6,206 @@ import com.Sofka.controladores.Consultas;
 import java.util.Scanner;
 
 public class Juego {
-    /*Jugador jugador = new Jugador();
-    Consultas jugadores = new Consultas();*/
-    public BancoPregunta bancoPregunta = new BancoPregunta();
 
-    public int puntajeFinal;
-    int validacion = 0;
-    int comprobar = -1;
-    int idNivel = 1;
+    public int puntajeFinal =0;
+    public int retorno;
+    public int iniciarJuego(String usuario) {
 
-    Scanner opcionJugador = new Scanner(System.in);
-
-    public int iniciarJuego(String jugador) {
-        this.puntajeFinal = 0;
         System.out.println("Primera Pregunta");
-        int nivelUno = this.primerNivel();
-        if (nivelUno == 1)
-        {
-            siguienteNivel(nivelUno, jugador);
-            System.out.println("Segunda Pregunta");
-            int nivelDos = this.segundoNivel();
-            if (nivelDos == 1) {
-                siguienteNivel(nivelDos, jugador);
-                System.out.println("Tercera Pregunta");
-                int nivelTres = this.tercerNivel();
-                if (nivelTres == 1) {
-                    siguienteNivel(nivelTres, jugador);
-                    System.out.println("Cuarta Pregunta");
-                    int nivelCuatro = this.cuartoNivel();
-                    if (nivelCuatro == 1) {
-                        siguienteNivel(nivelCuatro, jugador);
-                        System.out.println("Ultima Pregunta, Por el Premio Mayor");
-                        int nivelCinco = this.quintoNivel();
-                        if (nivelCinco == 1) {
-                            System.out.println("----FELICIDADES GANASTE EL PREMIO MAYOR----");
-                            siguienteNivel(nivelCinco, jugador);
-                        }
-                        siguienteNivel(nivelCinco, jugador);
-                    }
-                    siguienteNivel(nivelCuatro, jugador);
-                }
-                siguienteNivel(nivelTres, jugador);
-            }
-            siguienteNivel(nivelDos, jugador);
-        }
-        siguienteNivel(nivelUno, jugador);
-        return 0;
-    }
-
-
-    private int siguienteNivel(int nivel,String jugador){
-        if (nivel == 1) {
-            asignarScoreJugador(nivel, jugador, idNivel);
-            idNivel++;
+        int nivelUno = this.nivelUno();
+        this.puntajeFinal += 100;
+        retorno= this.avanzarNivel(nivelUno,usuario,this.puntajeFinal);
+        if(retorno==0){
             return 0;
         }
-        if (nivel == 2){
-            asignarScoreJugador(nivel, jugador, idNivel);
-            this.puntuacion(jugador, this.puntajeFinal);
+        System.out.println("Segunda Pregunta");
+        int nivelDos = this.nivelDos();
+        retorno= this.avanzarNivel(nivelDos,usuario,this.puntajeFinal);
+        if(retorno==0){
             return 0;
         }
-        if (nivel == 0){
-            asignarScoreJugador(nivel, jugador, idNivel);
-            this.puntuacion(jugador, this.puntajeFinal);
+        System.out.println("Tercera Pregunta");
+        int nivelTres = this.nivelTres();
+        retorno= this.avanzarNivel(nivelTres,usuario,this.puntajeFinal);
+        if(retorno==0){
             return 0;
         }
-        return 0;
+        System.out.println("Cuarta Pregunta");
+        int nivelCuatro = this.nivelCuatro();
+        retorno= this.avanzarNivel(nivelCuatro,usuario,this.puntajeFinal);
+        if(retorno==0){
+            return 0;
+        }
+        System.out.println("Ultima Pregunta, Por el Premio Mayor");
+        int nivelCinco = this.nivelCinco();
+        retorno= this.avanzarNivel(nivelCinco,usuario,this.puntajeFinal);
+        if(retorno==0){
+            return 0;
+        }
+
+        System.out.println("----FELICIDADES GANASTE EL PREMIO MAYOR----");
+        this.puntuacion(usuario, this.puntajeFinal);
+
+        return 1;
     }
 
-    private int primerNivel() {
-        bancoPregunta.setPrimerNivel();
-        while(comprobar != 3){
-            String respuesta = opcionJugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelUno() {
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaUno = new BancoPregunta();
+        bancoPreguntaUno.setPrimerNivel();
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaUno.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaUno.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        return validacion;
+        return validadcion;
     }
 
-    private int segundoNivel() {
-        bancoPregunta.setSegundoNivel();
-        while (comprobar != 3){
-            String respuesta = opcionJugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+
+    public int nivelDos() {
+
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaDos = new BancoPregunta();
+        bancoPreguntaDos.setSegundoNivel();
+
+        int validadcion = -1;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaDos.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaDos.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        return validacion;
+        return validadcion;
     }
 
-    private int tercerNivel() {
-        bancoPregunta.setTercerNivel();
-        while(comprobar!=3){
-            String respuesta = opcionJugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelTres() {
+
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaTres = new BancoPregunta();
+        bancoPreguntaTres.setTercerNivel();
+
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaTres.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaTres.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        return validacion;
+        return validadcion;
     }
 
-    private int cuartoNivel() {
-        bancoPregunta.setCuartoNivel();
-        while(comprobar!=3){
-            String respuesta = opcionJugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelCuatro() {
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaCuatro = new BancoPregunta();
+        bancoPreguntaCuatro.setCuartoNivel();
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaCuatro.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.setCuartoNivel();
+                    bancoPreguntaCuatro.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        return validacion;
+        return validadcion;
     }
 
-    private int quintoNivel() {
-        bancoPregunta.setQuintoNivel();
-        while(comprobar != 3){
-            String respuesta = opcionJugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelCinco() {
+
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaCinco = new BancoPregunta();
+        bancoPreguntaCinco.setQuintoNivel();
+
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaCinco.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaCinco.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        return validacion;
+        return validadcion;
     }
 
-    public int asignarValidacion(String resultado){
-        int validacion = -1;
-        if (resultado.equalsIgnoreCase("Respuesta incorrecta")){
-            validacion = 0;
+    public int validarRepuesta(String resultado){
+        if (resultado.equalsIgnoreCase("Respuesta incorrecta")) {
+            return  0;
         }
-        if (resultado.equalsIgnoreCase("El usuario se retira")){
-            validacion = 2;
+        if (resultado.equalsIgnoreCase("El usuario se retira")) {
+            return  2;
         }
-        if (resultado.equalsIgnoreCase("Respuesta correcta")){
-            validacion = 1;
+        if (resultado.equalsIgnoreCase("Respuesta correcta")) {
+            return  1;
         }
-        return validacion;
+        return -1;
+    }
+
+    public int avanzarNivel(int nivel, String usuario, int puntajeFinal){
+        switch (nivel){
+            case 0:
+                this.puntajeFinal = 0;
+                this.puntuacion(usuario, this.puntajeFinal);
+                return 0;
+            case 2:
+                this.puntuacion(usuario, this.puntajeFinal);
+                return 0;
+            default:
+                this.puntajeFinal+=150;
+        }
+        return 1;
+    }
+
+    public void puntuacion(String usuario, int puntajeFinal) {
+        System.out.println(usuario + " Tu puntaje fue de: " + puntajeFinal);
     }
 
     public void asignarScoreJugador(int nivel, String jugador,int idNivel)
@@ -223,9 +238,5 @@ public class Juego {
         this.puntajeFinal = 0;
     }
 
-    public void puntuacion(String jugador, int puntajeFinal) {
-
-        System.out.println(jugador + " Tu puntaje fue de: " + puntajeFinal);
-    }
 
 }

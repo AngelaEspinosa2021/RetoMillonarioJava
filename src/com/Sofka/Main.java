@@ -26,7 +26,7 @@ public class Main {
                 switch(opcion){
                     case 1:
                         int opcion2 = -1;
-                        while (opcion2 != 3){
+                        while (opcion2 != 0){
                             System.out.println("=================================");
                             System.out.println("           BIENVENIDO            ");
                             System.out.println("=================================");
@@ -34,8 +34,7 @@ public class Main {
                             System.out.println("  2. Mostrar Record de Jugadores.");
                             System.out.println("  0. Salir del Juego.            ");
                             System.out.println("=================================");
-                            Scanner menu2 = new Scanner(System.in);
-                            int opcion3 = menu2.nextInt();
+                            int opcion3 = menu.nextInt();
                             switch (opcion3) {
                                 case 1:
                                     var nombreJugador = jugador.validarNombreJugador();
@@ -48,26 +47,20 @@ public class Main {
                                 case 2:
                                     jugadores.consultarJugadores();
                                     break;
-                                case 0:
-                                    break;
                                 default:
                                     System.out.println("Seleccione una opcion valida");
                                     break;
-
                             }
                             System.out.println("===========================");
                             System.out.println("Seleccion una opcion:      ");
                             System.out.println(" 1. Iniciar Nueva Partida. ");
                             System.out.println(" 0. Salir del Juego      . ");
-                            Scanner menu3 = new Scanner(System.in);
-                            opcion2=menu3.nextInt();
+                            opcion2=menu.nextInt();
                         }
                     case 0:
-<<<<<<< HEAD
+
                         System.out.println("Salio del juego");
-=======
                         jugadores.eliminarJugadores();
->>>>>>> 4f8e13c64c311ad5665dc4a64c937cae90e6595a
                         break;
 
                     default:

@@ -1,8 +1,4 @@
 
-^
-.src/com/Sofka/bancopregunta/BancoPregunta.java,2\d\2d46294b7e61a4eb64a31422af026978b4b8bdeb
-\
-,src/com/Sofka/bancopregunta/TercerNivel.java,f\2\f2864ed2c607aac20c3e8f2c51ff830c301801a4
 \
 ,src/com/Sofka/bancopregunta/PrimerNivel.java,c\6\c643a189324920c9aec49409e5341beaea5746eb
 ]
