@@ -32,13 +32,14 @@ public class Main {
                             System.out.println("=================================");
                             System.out.println("  1. Iniciar Partida.            ");
                             System.out.println("  2. Mostrar Record de Jugadores.");
+                            System.out.println("  3. Eliminar Registro de Jugadores.");
                             System.out.println("  0. Salir del Juego.            ");
                             System.out.println("=================================");
                             int opcion3 = menu.nextInt();
                             switch (opcion3) {
                                 case 1:
                                     var nombreJugador = jugador.validarNombreJugador();
-                                    jugadores.agregarJugador(nombreJugador);
+                                    //jugadores.agregarJugador(nombreJugador);
                                     int valor = juego.iniciarJuego(nombreJugador);
                                     if(valor == 0){
                                         break;
@@ -46,6 +47,9 @@ public class Main {
                                     break;
                                 case 2:
                                     jugadores.consultarJugadores();
+                                    break;
+                                case 3:
+                                    jugadores.eliminarJugadores();
                                     break;
                                 default:
                                     System.out.println("Seleccione una opcion valida");
@@ -60,7 +64,6 @@ public class Main {
                     case 0:
 
                         System.out.println("Salio del juego");
-                        jugadores.eliminarJugadores();
                         break;
 
                     default:
