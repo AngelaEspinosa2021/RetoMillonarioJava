@@ -1,199 +1,242 @@
 package com.Sofka.entidades;
 
 import com.Sofka.bancopregunta.*;
+import com.Sofka.controladores.Consultas;
 
 import java.util.Scanner;
 
 public class Juego {
 
-    public BancoPregunta bancoPregunta = new BancoPregunta();
+    public int puntajeFinal =0;
+    public int retorno;
+    public int iniciarJuego(String usuario) {
 
-    public int puntajeFinal;
-    int[] resultadoPorNivel = new int[2];
-    int validacion = 0;
-    int comprobar = -1;
-    Scanner jugador = new Scanner(System.in);
-
-    public int iniciarJuego(String jugador){
-        this.puntajeFinal = 0;
-        System.out.println("Logica del juego");
         System.out.println("Primera Pregunta");
-        int[] nivelUno = this.primerNivel();
-        asignarScoreJugador(nivelUno,jugador);
+        int nivelUno = this.nivelUno();
+        this.puntajeFinal += 100;
+        retorno= this.avanzarNivel(nivelUno,usuario,this.puntajeFinal);
+        if(retorno==0){
+            return 0;
+        }
         System.out.println("Segunda Pregunta");
-        int[] nivelDos = this.segundoNivel();
-        asignarScoreJugador(nivelDos,jugador);
+        int nivelDos = this.nivelDos();
+        retorno= this.avanzarNivel(nivelDos,usuario,this.puntajeFinal);
+        if(retorno==0){
+            return 0;
+        }
         System.out.println("Tercera Pregunta");
-        int[] nivelTres = this.tercerNivel();
-        asignarScoreJugador(nivelTres,jugador);
+        int nivelTres = this.nivelTres();
+        retorno= this.avanzarNivel(nivelTres,usuario,this.puntajeFinal);
+        if(retorno==0){
+            return 0;
+        }
         System.out.println("Cuarta Pregunta");
-        int[] nivelCuatro = this.cuartoNivel();
-        asignarScoreJugador(nivelCuatro,jugador);
+        int nivelCuatro = this.nivelCuatro();
+        retorno= this.avanzarNivel(nivelCuatro,usuario,this.puntajeFinal);
+        if(retorno==0){
+            return 0;
+        }
         System.out.println("Ultima Pregunta, Por el Premio Mayor");
-        int[] nivelCinco = this.quintoNivel();
-        asignarScoreJugador(nivelCinco,jugador);
+        int nivelCinco = this.nivelCinco();
+        retorno= this.avanzarNivel(nivelCinco,usuario,this.puntajeFinal);
+        if(retorno==0){
+            return 0;
+        }
 
         System.out.println("----FELICIDADES GANASTE EL PREMIO MAYOR----");
-        this.puntuacion(jugador, this.puntajeFinal);
+        this.puntuacion(usuario, this.puntajeFinal);
+
         return 1;
     }
 
-    public int asignarScoreJugador(int[] nivel, String jugador){
-        if(nivel[0] == 0){
-            this.puntajeFinal = 0;
-            this.puntuacion(jugador, this.puntajeFinal);
-            return 0;
-        }
-        if(nivel[0] == 2){
-            this.puntuacion(jugador, this.puntajeFinal);
-            return 0;
-        }
-        this.puntajeFinal += nivel[1];
-        return 0;
-    }
-
-
-    private int[] primerNivel() {
-        bancoPregunta.setPrimerNivel();
-        while(comprobar != 3){
-            String respuesta = jugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelUno() {
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaUno = new BancoPregunta();
+        bancoPreguntaUno.setPrimerNivel();
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaUno.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaUno.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        int scoreNivel = 100;
-        resultadoPorNivel[0]=validacion;
-        resultadoPorNivel[1]=scoreNivel;
-        return resultadoPorNivel;
+        return validadcion;
     }
 
-    private int[] segundoNivel() {
-        bancoPregunta.setSegundoNivel();
-        while (comprobar != 3){
-            String respuesta = jugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+
+    public int nivelDos() {
+
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaDos = new BancoPregunta();
+        bancoPreguntaDos.setSegundoNivel();
+
+        int validadcion = -1;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaDos.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaDos.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        int scoreNivel = 100;
-        resultadoPorNivel[0]=validacion;
-        resultadoPorNivel[1]=scoreNivel;
-        return resultadoPorNivel;
+        return validadcion;
     }
 
-    private int[] tercerNivel() {
-        bancoPregunta.setTercerNivel();
-        while(comprobar!=3){
-            String respuesta = jugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelTres() {
+
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaTres = new BancoPregunta();
+        bancoPreguntaTres.setTercerNivel();
+
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaTres.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaTres.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        int scoreNivel = 100;
-        resultadoPorNivel[0]=validacion;
-        resultadoPorNivel[1]=scoreNivel;
-        return resultadoPorNivel;
+        return validadcion;
     }
 
-    private int[] cuartoNivel() {
-        bancoPregunta.setCuartoNivel();
-        while(comprobar!=3){
-            String respuesta = jugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelCuatro() {
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaCuatro = new BancoPregunta();
+        bancoPreguntaCuatro.setCuartoNivel();
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaCuatro.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.setCuartoNivel();
+                    bancoPreguntaCuatro.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        int scoreNivel = 100;
-        resultadoPorNivel[0]=validacion;
-        resultadoPorNivel[1]=scoreNivel;
-        return resultadoPorNivel;
+        return validadcion;
     }
 
-    private int[] quintoNivel() {
-        bancoPregunta.setQuintoNivel();
-        while(comprobar != 3){
-            String respuesta = jugador.nextLine();
-            String resultado = bancoPregunta.evaluarRespuesta(respuesta);
+    public int nivelCinco() {
+
+        Scanner usuario = new Scanner(System.in);
+        BancoPregunta bancoPreguntaCinco = new BancoPregunta();
+        bancoPreguntaCinco.setQuintoNivel();
+
+        int validadcion = 0;
+        int comprobar = -1;
+        while (comprobar != 3) {
+            String respuesta = usuario.nextLine();
+            String resultado = bancoPreguntaCinco.evaluarRespuesta(respuesta);
             System.out.println(resultado);
-            validacion = asignarValidacion(resultado);
-            switch (validacion)
-            {
+            validadcion = this.validarRepuesta(resultado);
+            switch (validadcion) {
                 case -1:
                     comprobar = 1;
-                    bancoPregunta.mostraInformacion();
+                    bancoPreguntaCinco.mostraInformacion();
                     break;
                 default:
                     comprobar = 3;
                     break;
             }
         }
-        int scoreNivel = 100;
-        resultadoPorNivel[0]=validacion;
-        resultadoPorNivel[1]=scoreNivel;
-        return resultadoPorNivel;
+        return validadcion;
     }
 
-    public int asignarValidacion(String resultado){
-        int validacion = -1;
-        if (resultado.equalsIgnoreCase("Respuesta incorrecta")){
-            validacion = 0;
+    public int validarRepuesta(String resultado){
+        if (resultado.equalsIgnoreCase("Respuesta incorrecta")) {
+            return  0;
         }
-        if (resultado.equalsIgnoreCase("El usuario se retira")){
-            validacion = 2;
+        if (resultado.equalsIgnoreCase("El usuario se retira")) {
+            return  2;
         }
-        if (resultado.equalsIgnoreCase("Respuesta correcta")){
-            validacion = 1;
+        if (resultado.equalsIgnoreCase("Respuesta correcta")) {
+            return  1;
         }
-        return validacion;
+        return -1;
     }
 
-    public void puntuacion(String jugador, int puntajeFinal) {
-        System.out.println(jugador + " Tu puntaje fue de: " + puntajeFinal);
-
+    public int avanzarNivel(int nivel, String usuario, int puntajeFinal){
+        switch (nivel){
+            case 0:
+                this.puntajeFinal = 0;
+                this.puntuacion(usuario, this.puntajeFinal);
+                return 0;
+            case 2:
+                this.puntuacion(usuario, this.puntajeFinal);
+                return 0;
+            default:
+                this.puntajeFinal+=150;
+        }
+        return 1;
     }
 
-    public static void main(String[] args) {
-        Juego juego = new Juego();
-        juego.iniciarJuego("Jaime");
+    public void puntuacion(String usuario, int puntajeFinal) {
+        System.out.println(usuario + " Tu puntaje fue de: " + puntajeFinal);
     }
+
+    public void asignarScoreJugador(int nivel, String jugador,int idNivel)
+    {
+        if((nivel == 1)&&(nivel == 2)){
+            switch (idNivel){
+                case(1):
+                    puntajeFinal = 100;
+                    this.puntuacion(jugador, this.puntajeFinal);
+                    break;
+                case(2):
+                    puntajeFinal = 150;
+                    this.puntuacion(jugador, this.puntajeFinal);
+                    break;
+                case(3):
+                    puntajeFinal = 200;
+                    this.puntuacion(jugador, this.puntajeFinal);
+                    break;
+                case(4):
+                    puntajeFinal = 250;
+                    this.puntuacion(jugador, this.puntajeFinal);
+                    break;
+                case(5):
+                    puntajeFinal = 300;
+                    this.puntuacion(jugador, this.puntajeFinal);
+                    break;
+            }
+
+        }
+        this.puntajeFinal = 0;
+    }
+
+
 }
