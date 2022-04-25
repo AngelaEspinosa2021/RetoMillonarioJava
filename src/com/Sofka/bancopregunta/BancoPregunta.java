@@ -19,28 +19,28 @@ public class BancoPregunta {
     }
 
     public void setSegundoNivel(){
-        PrimerNivel primerNivel = new PrimerNivel();
-        ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+        SegundoNivel segundoNivel = new SegundoNivel();
+        ServicioPregunta pregunta=segundoNivel.preguntaNivelDos();
         System.out.println(informacion=pregunta.toString());
         correcta=pregunta.getCorrecta();
     }
 
        public void setTercerNivel(){
-           PrimerNivel primerNivel = new PrimerNivel();
-           ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+           TercerNivel tercerNivel = new TercerNivel();
+           ServicioPregunta pregunta=tercerNivel.preguntaNivelTres();
            System.out.println(informacion=pregunta.toString());
            correcta=pregunta.getCorrecta();
        }
     public void setCuartoNivel(){
-        PrimerNivel primerNivel = new PrimerNivel();
-        ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+        CuartoNivel cuartoNivel = new CuartoNivel();
+        ServicioPregunta pregunta= cuartoNivel.preguntaNivelCuatro();
         System.out.println(informacion=pregunta.toString());
         correcta=pregunta.getCorrecta();
 
     }
     public void setQuintoNivel() {
-        PrimerNivel primerNivel = new PrimerNivel();
-        ServicioPregunta pregunta=primerNivel.preguntasNivelUno();
+        QuintoNivel quintoNivel = new QuintoNivel();
+        ServicioPregunta pregunta=quintoNivel.preguntaNivelCinco();
         System.out.println(informacion=pregunta.toString());
         correcta=pregunta.getCorrecta();
 

@@ -1,0 +1,6 @@
+
+3
+java:S2119""Save and re-use this "Random".(¼İÅf
+>	java:S131*""Add a default case to this switch.(ø¾‚8‹Şß…0
+Z	java:S106?"9Replace this use of System.out or System.err by a logger.(³¡ıÛûÿÿÿÿ8±î³ß…0
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯ô‘Ûûÿÿÿÿ
