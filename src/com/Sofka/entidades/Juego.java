@@ -7,40 +7,39 @@ import java.util.Scanner;
 
 public class Juego {
 
+    public int puntajeFinal;
     //Consultas nueva = new Consultas();
-
-    public int puntajeFinal =0;
     public int retorno;
     public int iniciarJuego(String usuario) {
 
         System.out.println("Primera Pregunta");
         int nivelUno = this.nivelUno();
         this.puntajeFinal += 100;
-        retorno= this.avanzarNivel(nivelUno,usuario,this.puntajeFinal);
+        retorno= this.avanzarNivel(nivelUno,usuario,this.puntajeFinal,100);
         if(retorno==0){
             return 0;
         }
         System.out.println("Segunda Pregunta");
         int nivelDos = this.nivelDos();
-        retorno= this.avanzarNivel(nivelDos,usuario,this.puntajeFinal);
+        retorno= this.avanzarNivel(nivelDos,usuario,this.puntajeFinal,200);
         if(retorno==0){
             return 0;
         }
         System.out.println("Tercera Pregunta");
         int nivelTres = this.nivelTres();
-        retorno= this.avanzarNivel(nivelTres,usuario,this.puntajeFinal);
+        retorno= this.avanzarNivel(nivelTres,usuario,this.puntajeFinal,300);
         if(retorno==0){
             return 0;
         }
         System.out.println("Cuarta Pregunta");
         int nivelCuatro = this.nivelCuatro();
-        retorno= this.avanzarNivel(nivelCuatro,usuario,this.puntajeFinal);
+        retorno= this.avanzarNivel(nivelCuatro,usuario,this.puntajeFinal,400);
         if(retorno==0){
             return 0;
         }
         System.out.println("Ultima Pregunta, Por el Premio Mayor");
         int nivelCinco = this.nivelCinco();
-        retorno= this.avanzarNivel(nivelCinco,usuario,this.puntajeFinal);
+        retorno= this.avanzarNivel(nivelCinco,usuario,this.puntajeFinal,500);
         if(retorno==0){
             return 0;
         }
@@ -191,7 +190,7 @@ public class Juego {
         return -1;
     }
 
-    public int avanzarNivel(int nivel, String usuario, int puntajeFinal){
+    public int avanzarNivel(int nivel, String usuario, int puntajeFinal, int putajePregunta){
         switch (nivel){
             case 0:
                 this.puntajeFinal = 0;
@@ -201,7 +200,7 @@ public class Juego {
                 this.puntuacion(usuario, this.puntajeFinal);
                 return 0;
             default:
-                this.puntajeFinal+=150;
+                this.puntajeFinal+=putajePregunta;
         }
         return 1;
     }
