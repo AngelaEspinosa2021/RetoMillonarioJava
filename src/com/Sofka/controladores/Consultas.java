@@ -25,12 +25,12 @@ public class Consultas {
             }
         }
 
-        public void agregarJugador(String jugador/*, int puntaje*/){
+        public void agregarJugador(String jugador, int puntaje){
             try{
                 String ps = "INSERT INTO jugadores VALUES(?, ?)";
                 PreparedStatement nueva = conex.prepareStatement(ps);
                 nueva.setString(1, jugador);
-                //nueva.setInt(2, puntaje);
+                nueva.setInt(2, puntaje);
                 nueva.executeUpdate();
 
             }catch (Exception e){
