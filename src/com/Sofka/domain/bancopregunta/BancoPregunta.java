@@ -1,6 +1,4 @@
-package com.Sofka.bancopregunta;
-
-import static java.lang.System.exit;
+package com.Sofka.domain.bancopregunta;
 
 public class BancoPregunta {
 

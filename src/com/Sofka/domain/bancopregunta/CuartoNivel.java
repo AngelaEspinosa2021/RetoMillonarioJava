@@ -1,4 +1,4 @@
-package com.Sofka.bancopregunta;
+package com.Sofka.domain.bancopregunta;
 
 public class CuartoNivel extends ServicioPregunta {
     //Constructor vacio
@@ -31,7 +31,7 @@ public class CuartoNivel extends ServicioPregunta {
                 "D. Richard Harris", "A", 250);
 
         ServicioPregunta cuartaPregunta = new CuartoNivel("¿Cuantos cromosomas tiene el ser humano?", "A.  45",
-                "47", "C. 46", "D. 35", "A", 250);
+                "B. 47", "C. 46", "D. 35", "A", 250);
 
         ServicioPregunta quintaPregunta = new CuartoNivel("¿En que continente esta ubicado Surinam?", "A. Asia",
                 "B. America del sur", "C. Europa", "D. Africa", "B", 250);

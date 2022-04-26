@@ -1,4 +1,4 @@
-package com.Sofka.bancopregunta;
+package com.Sofka.domain.bancopregunta;
 
 public class TercerNivel extends ServicioPregunta {
 
@@ -21,8 +21,8 @@ public class TercerNivel extends ServicioPregunta {
                 "B. 1930", "C. 1829", "D. 1945", "B", 200);
 
         ServicioPregunta segundaPregunta = new TercerNivel("¿Qué inició la Segunda Guerra Mundial?",
-                "A. La invacion de Alemania a Polonia",
-                "B. La invacion de Alemania a Austria", "C. La invacion de Alemania a Fancia",
+                "A. La invasion de Alemania a Polonia",
+                "B. La invasion de Alemania a Austria", "C. La invacion de Alemania a Fancia",
                 "D. El bombardeo de Japon a Pearl Harbor", "A", 200);
 
         ServicioPregunta terceraPregunta = new TercerNivel("¿En que pelicula, Harry Potter libera a un elfo domestico?",
