@@ -1,6 +1,6 @@
 package com.Sofka.entidades;
 
-import com.Sofka.bancopregunta.*;
+import com.Sofka.domain.bancopregunta.*;
 import com.Sofka.controladores.Consultas;
 
 import java.util.Scanner;

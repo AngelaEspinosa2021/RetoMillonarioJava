@@ -1,4 +1,4 @@
-package com.Sofka.bancopregunta;
+package com.Sofka.domain.bancopregunta;
 
 import java.util.Random;
 
